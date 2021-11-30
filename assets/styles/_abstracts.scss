@@ -1,0 +1,30 @@
+
+$cream: #F2F7F2;
+$yellow: #FFD447;
+$tomato: #f86449;
+$beige : #e7eeed;
+$black: hsl(0, 0%, 30%);
+
+$shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.05);
+
+@mixin wiggle {
+    position: relative;
+
+    &::after {
+        --scale: 1;
+        content: '';
+        position: absolute;
+        height: 3.85px;
+        width: 40px;
+        background-image: url('~assets/images/wiggle.svg');
+        bottom: 0;
+        left: 50%;
+        transition: transform 200ms ease-out;
+        transform-origin: left;
+        transform: translateX(-50%) scaleX( var(--scale, 1) );
+    }
+}
+
+@function rem( $pixel ) {
+    @return ($pixel / 16) * 1rem;
+}

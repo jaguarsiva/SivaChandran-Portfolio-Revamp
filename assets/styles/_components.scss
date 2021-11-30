@@ -1,0 +1,109 @@
+
+#__nuxt,
+#__layout {
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    background-color: $tomato;
+}
+
+.hero__section {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.hero__background,
+.hero__image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+}
+
+.hero__background {
+    z-index: 2;
+    background-image: url('~assets/images/background.jpg');
+    transition: opacity 400ms cubic-bezier(0.62, 0.02, 0.34, 1);
+    opacity: 0;
+
+    &.is__visible {
+        opacity: 1;
+    }
+}
+
+.hero__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.hero__image {
+    z-index: 4;
+    transform: translateX( var(--translateX, 0) ) translateY( var(--translateY, 0) );
+}
+
+.tilted__section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-block: 200px 150px;
+    overflow: hidden;
+
+    &::before {
+        --rotate: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 300%;
+        height: 300%;
+        background-color: $cream;
+        margin-left: -30%;
+        opacity: 0.08;
+        transform: rotate(var(--rotate));
+        transition: transform 750ms ease-out 500ms;
+    }
+
+    &.is__visible::before {
+        --rotate: -20deg;
+    }
+}
+
+.light__section {
+    position: relative;
+    z-index: 1;
+    color: $black;
+    width: 100%;
+    background-color: $beige;
+    padding-block: 150px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url('~assets/images/camouflage.jpg');
+        background-size: contain;
+        opacity: 0.025;
+    }
+
+    .section__heading {
+        color: $black;
+
+        &::before {
+            background-color: $tomato;
+        }
+    }
+}
