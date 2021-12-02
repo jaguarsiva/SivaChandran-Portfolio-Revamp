@@ -83,10 +83,10 @@
         background-color: $yellow;
         transform: translateX(-50%) rotate(-12deg) scaleX( var(--scale) );
         transform-origin: left;
-        transition: transform 0.4s ease-out 0.5s;
     }
 
     &.heading__visible::before {
         --scale: 1;
+        transition: transform 0.4s ease-out 0.5s;
     }
 }

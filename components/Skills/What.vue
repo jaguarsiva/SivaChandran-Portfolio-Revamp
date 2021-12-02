@@ -13,14 +13,14 @@
         </h2>
 
         <div
+            ref="skillsOuter"
             class="skills__outer flex-col align-center"
             :class="{ skills__visible: isSkillsVisible }"
-            ref="skillsOuter"
         >
             <div
-                class="skill__row flex-col align-center"
                 v-for="skill in skills"
                 :key="skill.title"
+                class="skill__row flex-col align-center"
             >
                 <div class="road top"></div>
                 <div class="road left"></div>
@@ -29,16 +29,19 @@
                 <h3 class="skill__title tahu relative">{{ skill.title }}</h3>
                 <ul class="flex skill__list">
                     <li
-                        class="skill__item flex-center"
                         v-for="item in skill.items"
-                        :key="item"
+                        :key="item.title"
+                        class="skill__item flex-center"
                     >
-                        <span
-                            class="skills__sprite"
-                            :class="item.toLowerCase()"
+                        <a
+                            :title="item.title"
+                            target="_blank"
+                            :href="item.link"
+                            class="icons__sprite"
+                            :class="item.title.toLowerCase()"
                         >
                             &nbsp;
-                        </span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -57,21 +60,50 @@ export default {
             skills: [
                 {
                     title: 'Core',
-                    items: ['HTML', 'CSS', 'Javascript', 'SASS', 'Typescript']
+                    items: [
+                        { title: 'HTML', link: 'https://www.w3schools.com/html/' },
+                        { title: 'CSS', link: 'https://www.w3schools.com/css/' },
+                        { title: 'Javascript', link: 'https://www.w3schools.com/js/' },
+                        { title: 'SASS', link: 'https://sass-lang.com/' },
+                        { title: 'Typescript', link: 'https://www.typescriptlang.org/' }
+                    ]
                 },
                 {
                     title: 'Frontend',
-                    items: ['Vue', 'Nuxt', 'PostCSS', 'Tailwind', 'Figma']
+                    items: [
+                        { title: 'Vue', link: 'https://vuejs.org/' },
+                        { title: 'Nuxt', link: 'nuxtjs.org' },
+                        { title: 'PostCSS', link: 'https://postcss.org/' },
+                        { title: 'Tailwind', link: 'https://tailwindcss.com/' },
+                        { title: 'Figma', link: 'https://www.figma.com/' }
+                    ]
                 },
                 {
                     title: 'Backend',
-                    items: ['Node', 'Express', 'MongoDB', 'Firebase']
+                    items: [
+                        { title: 'Node', link: 'https://nodejs.org/en/' },
+                        { title: 'Express', link: 'https://expressjs.com/' },
+                        { title: 'MongoDB', link: 'https://www.mongodb.com/' },
+                        { title: 'Firebase', link: 'https://firebase.google.com/' }
+                    ]
                 },
                 {
                     title: 'Tools',
-                    items: ['Vite', 'Webpack', 'Gulp', 'eslint', 'prettier']
+                    items: [
+                        { title: 'Vite', link: 'https://vitejs.dev/' },
+                        { title: 'Webpack', link: 'https://webpack.js.org/' },
+                        { title: 'Gulp', link: 'https://gulpjs.com/' },
+                        { title: 'eslint', link: 'https://eslint.org/' },
+                        { title: 'prettier', link: 'https://prettier.io/' }
+                    ]
                 },
-                { title: 'Source Control', items: ['Git', 'Github'] }
+                {
+                    title: 'Source Control',
+                    items: [
+                        { title: 'Git', link: 'https://git-scm.com/' },
+                        { title: 'Github', link: 'https://github.com/' }
+                    ]
+                }
             ],
             isSkillsVisible: false
         };
@@ -80,7 +112,7 @@ export default {
         new IntersectionObserver((entries, observer) => {
             if( entries[0].isIntersecting ) {
                 this.isSkillsVisible = true;
-                observer.unobserve();
+                observer.unobserve( entries[0].target );
             }
         }, {}).observe(this.$refs.skillsOuter);
     }
@@ -88,6 +120,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.what__section.is__visible::before {
+    top: 100px;
+}
+
 .skills__outer {
     margin-block-start: 100px;
 }
@@ -96,8 +133,8 @@ export default {
     position: relative;
     width: 90%;
     max-width: 1000px;
-    gap: 12px;
-    padding-block: 75px;
+    gap: 24px;
+    padding-block: 50px 100px;
     padding-inline: 75px;
     $border: 5px solid $cream;
 
@@ -195,13 +232,14 @@ export default {
     .skill__item {
         height: 124px;
         width: 124px;
-        transform: translateY(-200px);
+        animation: fade-in var(--duration) ease-in-out backwards,
+            card 2s ease-in-out infinite alternate-reverse;
     }
 
     .skills__visible & {
         --duration: 300ms;
         --line-delay: calc(
-            var(--delay) + (var(--duration) * (3 + var(--total)))
+            var(--delay) + (var(--duration) * (4 + var(--total)))
         );
 
         *,
@@ -235,27 +273,24 @@ export default {
         }
 
         .skill__item {
-            transform: translateY(0);
-            transition-property: transform;
-
             &:nth-child(1) {
-                transition-delay: calc(var(--delay) + (var(--duration) * 2));
+                animation-delay: calc(var(--delay) + (var(--duration) * 3));
             }
 
             &:nth-child(2) {
-                transition-delay: calc(var(--delay) + (var(--duration) * 3));
+                animation-delay: calc(var(--delay) + (var(--duration) * 4));
             }
 
             &:nth-child(3) {
-                transition-delay: calc(var(--delay) + (var(--duration) * 4));
+                animation-delay: calc(var(--delay) + (var(--duration) * 5));
             }
 
             &:nth-child(4) {
-                transition-delay: calc(var(--delay) + (var(--duration) * 5));
+                animation-delay: calc(var(--delay) + (var(--duration) * 6));
             }
 
             &:nth-child(5) {
-                transition-delay: calc(var(--delay) + (var(--duration) * 6));
+                animation-delay: calc(var(--delay) + (var(--duration) * 7));
             }
         }
 
@@ -303,22 +338,22 @@ export default {
         }
 
         &:nth-child(2) {
-            --delay: 4600ms;
+            --delay: 4900ms;
             --total: 5;
         }
 
         &:nth-child(3) {
-            --delay: 8400ms;
+            --delay: 8700ms;
             --total: 4;
         }
 
         &:nth-child(4) {
-            --delay: 11800ms;
+            --delay: 12100ms;
             --total: 5;
         }
 
         &:nth-child(5) {
-            --delay: 15400ms;
+            --delay: 15700ms;
             --total: 2;
         }
     }
@@ -329,16 +364,5 @@ export default {
     line-height: 1;
     margin-right: 30px;
     padding-left: 35px;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 18px;
-        height: 4px;
-        background-color: $yellow;
-        transform: translateY(-50%) rotate(-12deg);
-    }
 }
 </style>

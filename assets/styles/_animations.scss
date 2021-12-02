@@ -30,3 +30,31 @@
         border-color: $cream;
     }
 }
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes card {
+	0% {
+		transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
+	}
+	25% {
+		transform: perspective(200px) rotateY(0) rotateX(20deg);
+	}
+	50% {
+		transform: perspective(200px) rotateY(-20deg) rotateX(-20deg);
+	}
+	75% {
+		transform: perspective(200px) rotateY(0) rotateX(20deg);
+	}
+	to {
+		transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
+	}
+}

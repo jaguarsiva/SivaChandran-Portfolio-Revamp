@@ -11,7 +11,7 @@
             :style="transform"
         >
             <img
-                src="~assets/images/intro__hero.svg"
+                src="~assets/images/skills__hero.svg"
                 alt="Boy working on a laptop"
             />
         </div>
@@ -30,13 +30,13 @@ export default {
 img {
     --opacity: 0;
     --scale: 0.9, 0.9, 0.9;
-    width: 80vw;
     position: absolute;
-    bottom: -47px;
-    left: 10vw;
+    left: 50%;
+    bottom: -175px;
+    height: 767px;
     transition: opacity 200ms ease-in 200ms, transform 200ms ease-in 200ms;
     opacity: var(--opacity);
-    transform: scale3d(var(--scale)) translateZ(200px);
+    transform: translateX(-50%) scale3d(var(--scale)) translateZ(200px);
     transform-style: preserve-3d;
     perspective: 100px;
 

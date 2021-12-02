@@ -8,53 +8,38 @@
             How I Learned
         </h2>
 
-        <div class="how__texts" :class="{ texts__visible: isTextsVisible }">
-            <p class="signika">
-                <span>For me there was no bootcamps, </span>
-                <span>no coding institutes either </span>
-                <span>All I had was</span>
-            </p>
-            <p class="tahu translate__up" ref="mainText">
-                Only the Internet and a hungry soul
-            </p>
-            <p class="signika translate__up">
-                <span>I showed up everyday inorder to learn more and </span>
-                <span
-                    >slowly but steadily I found a path that I could
-                    follow</span
-                >
-            </p>
+        <div
+            ref="box"
+            class="how__box box flex"
+            :class="{ box__visible: isBoxVisible }"
+        >
+            <div class="box__left">
+                <h3 class="tahu">A Self Taught Developer</h3>
+                <p class="biko__regular">
+                    For me there was no bootcamps, no coding institutes either. All I had was
+                    <span class="biko__bold">only the internet and a hungry soul.</span>
+                    I showed up everyday inorder to learn more. And then slowly but steadily I found a path that I could follow.
+                </p>
+                <ul class="tags flex">
+                    <li>#EAT_SLEEP_CODE_REPEAT</li>
+                    <li>#JUST_CODE_AND_CHILL</li>
+                </ul>
+            </div>
+            <div class="box__right">
+                <img src="~assets/images/keyboard.jpg" alt="keyboard">
+                <span>
+                    Photo by <a href="https://unsplash.com/@nublson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="__blank">Nubelson Fernandes</a> on <a href="https://unsplash.com/s/photos/developer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="__blank">Unsplash</a>
+                </span>
+            </div>
         </div>
-
-        <ul class="tags flex justify-center" :class="{ texts__visible: isTextsVisible }">
-            <li class="translate__up">
-                #EAT_SLEEP_CODE_REPEAT
-            </li>
-            <li class="translate__up">
-                #JUST_CODE_AND_CHILL
-            </li>
-            <li class="translate__up">
-                #SELF_TAUGHT_DEVELOPER
-            </li>
-        </ul>
-
     </section>
 </template>
 
 <script>
 import sectionHeading from '@/mixins/sectionHeading.js';
+import box from '@/mixins/box.js';
 export default {
-    mixins: [sectionHeading],
-    data() {
-        return {
-            isTextsVisible: false
-        };
-    },
-    mounted() {
-        new IntersectionObserver(entries => {
-            this.isTextsVisible = entries[0].isIntersecting;
-        }, {}).observe(this.$refs.mainText);
-    }
+    mixins: [sectionHeading, box],
 };
 </script>
 
@@ -64,69 +49,46 @@ export default {
     text-align: center;
 }
 
-.translate__up {
-    --translate: 150px;
-    opacity: 0;
-    transform: translateY(var(--translate));
-
-    .texts__visible & {
-        opacity: 1;
-        --translate: 0;
-        transition: opacity 500ms linear, transform 500ms linear;
-    }
-}
-
-p:first-child, p:last-child {
-    font-size: rem(26);
-    line-height: 1.6;
-    font-weight: 300;
+p {
+    font-size: rem(20);
+    line-height: 1.75;
+    color: hsl(0, 0, 48%);
 
     span {
-        display: block;
+        color: $tomato;
     }
 }
 
-p:nth-child(2) {
-    font-size: rem(80);
-    color: $tomato;
-    margin-block: 30px;
-
-    .texts__visible & {
-        transition-delay: 300ms;
-    }
-}
-
-.texts__visible p:last-child {
-    transition-delay: 600ms;
-}
 
 .tags {
-    margin-top: 75px;
-    gap: 18px;
+    margin-top: 24px;
+    gap: 12px;
 
     li {
-        padding: 6px 12px;
-        background-color: $black;
-        border-radius: 6px;
+        font-size: rem(16);
         font-weight: 500;
-        font-size: rem(18);
+        line-height: 1;
         color: $cream;
+        padding: 6px 12px;
+        border-radius: 6px;
         box-shadow: $shadow;
+        background-color: $black;
         text-transform: lowercase;
         transition-duration: 200ms;
+    }
 
+    &.texts__visible li {
         &:first-child {
-            transition-delay: 900ms;
+            transition-delay: 2000ms;
         }
 
         &:nth-child(2) {
-            transition-delay: 1100ms;
+            transition-delay: 2250ms;
         }
 
         &:last-child {
-            transition-delay: 1300ms;
+            transition-delay: 2500ms;
         }
     }
 }
-
 </style>

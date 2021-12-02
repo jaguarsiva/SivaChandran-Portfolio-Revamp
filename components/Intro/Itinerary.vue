@@ -8,14 +8,14 @@
             Life itinerary
         </h2>
         <div
-            class="roadmap__outer flex-col"
             ref="roadmap"
+            class="roadmap__outer flex-col"
             :class="{ is__visible: isMapVisible }"
         >
             <div
-                class="roadmap__row relative flex align-center"
                 v-for="(map, index) in roadmap"
                 :key="index"
+                class="roadmap__row relative flex align-center"
             >
                 <div class="roadmap__point"></div>
                 <span class="roadmap__time biko__black"> {{ map.time }} </span>
@@ -54,8 +54,11 @@ export default {
         };
     },
     mounted() {
-        new IntersectionObserver(entries => {
-            this.isMapVisible = entries[0].isIntersecting;
+        new IntersectionObserver((entries, observer) => {
+            if( entries[0].isIntersecting ) {
+                this.isMapVisible = true;
+                observer.unobserve( entries[0].target );
+            }
         }, {}).observe(this.$refs.roadmap);
     }
 };

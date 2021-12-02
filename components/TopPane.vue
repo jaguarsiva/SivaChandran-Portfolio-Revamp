@@ -103,9 +103,9 @@ header {
 .nav__link {
     display: inline-block;
     padding: 10px;
-    font-size: rem(20);
+    font-size: rem(18);
+    line-height: 1;
     color: $cream;
-    line-height: 20px;
     letter-spacing: 1px;
     border-radius: 12px;
 

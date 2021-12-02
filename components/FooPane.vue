@@ -38,11 +38,13 @@ p {
 }
 
 span {
-    font-size: rem(50);
+    font-size: rem(42);
     line-height: 2;
     color: $black;
     opacity: 0;
     transform: translateY(50px);
+    width: 250px;
+    text-align: right;
 
     .footer__visible & {
         opacity: 1;
@@ -64,10 +66,11 @@ span {
 }
 
 .heart {
+    --scale3d: 0, 0, 0;
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%) translateY( var(--translateY, -300px) );
+    transform: translateX(-50%) scale3d( var(--scale3d) );
 }
 
 .footer__visible {
@@ -77,7 +80,7 @@ span {
     }
 
     .heart {
-        --translateY: 0px;
+        --scale3d: 1, 1, 1;
         transition: transform 500ms ease-out 1250ms;
     }
 }

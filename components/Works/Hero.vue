@@ -11,7 +11,7 @@
             :style="transform"
         >
             <img
-                src="~assets/images/intro__hero.svg"
+                src="~assets/images/works__hero.svg"
                 alt="Boy working on a laptop"
             />
         </div>

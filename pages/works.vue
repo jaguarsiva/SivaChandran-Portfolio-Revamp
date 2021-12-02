@@ -1,15 +1,21 @@
 <template>
     <main>
         <Hero />
+        <What />
+        <Where />
     </main>
 </template>
 
 <script>
 import Hero from '@/components/Works/Hero.vue';
+import What from '@/components/Works/What.vue';
+import Where from '@/components/Works/Where.vue';
 
 export default {
     components: {
-        Hero
+        Hero,
+        What,
+        Where
     }
 };
 </script>

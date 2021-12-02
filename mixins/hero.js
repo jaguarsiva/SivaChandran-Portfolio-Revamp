@@ -2,22 +2,19 @@ export default {
     data() {
         return {
             isHeroVisible: true,
-            translateX: 0,
-            translateY: 0
+            rotateX: 0,
+            rotateY: 0
         };
     },
     computed: {
         transform() {
-            return `--translateX: ${this.translateX}px; --translateY: ${this.translateY}px;`;
+            return `--rotateX: ${this.rotateX}deg; --rotateY: ${this.rotateY}deg;`;
         }
     },
     methods: {
         handleMouseMove(event) {
-            this.translateX = (window.innerWidth / 2 - event.pageX) / 10;
-            this.translateY = (window.innerHeight / 2 - event.pageY) / 10;
-            // const xAxis = (window.innerWidth / 2 - event.pageX) / 25;
-            // const yAxis = (window.innerHeight / 2 - event.pageY) / 25;
-            // this.imageTransform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            this.rotateX = (window.innerWidth / 2 - event.pageX) / 50;
+            this.rotateY = (window.innerHeight / 2 - event.pageY) / 50;
         }
     },
     mounted() {

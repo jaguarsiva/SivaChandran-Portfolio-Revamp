@@ -3,9 +3,11 @@ $cream: #F2F7F2;
 $yellow: #FFD447;
 $tomato: #f86449;
 $beige : #e7eeed;
-$black: hsl(0, 0%, 30%);
+$black: #4d4d4d;
 
-$shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.05);
+$gradient: linear-gradient(115deg, #FB603E 0%, #CD1818 50%, #FB603E 100%,);
+
+$shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.1);
 
 @mixin wiggle {
     position: relative;

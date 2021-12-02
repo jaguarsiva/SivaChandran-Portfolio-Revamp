@@ -1,221 +1,205 @@
-
-// .skills__sprite {
-//     background-image: url('~assets/images/skills.png');
-//     background-size: 764px 764px;
-// }
-
-// .css {
-//     width: 128px; height: 128px;
-//     background-position: -330px -10px;
-// }
-
-// .eslint {
-//     width: 125px; height: 128px;
-//     background-position: -10px -626px;
-// }
-
-// .express {
-//     width: 128px; height: 128px;
-//     background-position: -330px -158px;
-// }
-
-// .figma {
-//     width: 129px; height: 128px;
-//     background-position: -170px -170px;
-// }
-
-// .firebase {
-//     width: 128px; height: 128px;
-//     background-position: -10px -330px;
-// }
-
-// .git {
-//     width: 128px; height: 128px;
-//     background-position: -158px -330px;
-// }
-
-// .github {
-//     width: 128px; height: 128px;
-//     background-position: -306px -330px;
-// }
-
-// .gulp {
-//     width: 128px; height: 128px;
-//     background-position: -478px -10px;
-// }
-
-// .html {
-//     width: 128px; height: 128px;
-//     background-position: -478px -158px;
-// }
-
-// .javascript {
-//     width: 140px; height: 140px;
-//     background-position: -10px -10px;
-// }
-
-// .mongodb {
-//     width: 128px; height: 128px;
-//     background-position: -478px -306px;
-// }
-
-// .node {
-//     width: 128px; height: 128px;
-//     background-position: -10px -478px;
-// }
-
-// .nuxt {
-//     width: 128px; height: 128px;
-//     background-position: -158px -478px;
-// }
-
-// .postcss {
-//     width: 128px; height: 128px;
-//     background-position: -306px -478px;
-// }
-
-// .prettier {
-//     width: 140px; height: 140px;
-//     background-position: -170px -10px;
-// }
-
-// .sass {
-//     width: 128px; height: 128px;
-//     background-position: -454px -478px;
-// }
-
-// .tailwind {
-//     width: 128px; height: 128px;
-//     background-position: -626px -10px;
-// }
-
-// .typescript {
-//     width: 140px; height: 140px;
-//     background-position: -10px -170px;
-// }
-
-// .vite {
-//     width: 128px; height: 127px;
-//     background-position: -626px -454px;
-// }
-
-// .vue {
-//     width: 128px; height: 128px;
-//     background-position: -626px -158px;
-// }
-
-// .webpack {
-//     width: 128px; height: 128px;
-//     background-position: -626px -306px;
-// }
-
-
-.skills__sprite {
-    background-image: url('~assets/images/skills.png');
-    background-size: 382px 382px;
+.icons__sprite {
+    display: inline-block;
+    background-image: url('~assets/images/icons.png');
+    background-size: 420px 420px;
+    width: 64px;
+    height: 64px;
 }
 
 .css {
-    width: 64px; height: 64px;
-    background-position: -165px -5px;
+    background-position: -10px -10px;
 }
 
 .eslint {
-    width: 62.5px; height: 64px;
-    background-position: -5px -313px;
+    background-position: -94px -10px;
 }
 
 .express {
-    width: 64px; height: 64px;
-    background-position: -165px -79px;
+    background-position: -10px -94px;
 }
 
 .figma {
-    width: 64.5px; height: 64px;
-    background-position: -85px -85px;
+    background-position: -94px -94px;
 }
 
 .firebase {
-    width: 64px; height: 64px;
-    background-position: -5px -165px;
+    background-position: -178px -10px;
 }
 
 .git {
-    width: 64px; height: 64px;
-    background-position: -79px -165px;
+    background-position: -178px -94px;
 }
 
 .github {
-    width: 64px; height: 64px;
-    background-position: -153px -165px;
+    background-position: -10px -178px;
 }
 
 .gulp {
-    width: 64px; height: 64px;
-    background-position: -239px -5px;
+    background-position: -94px -178px;
 }
 
 .html {
-    width: 64px; height: 64px;
-    background-position: -239px -79px;
+    background-position: -178px -178px;
 }
 
 .javascript {
-    width: 70px; height: 70px;
-    background-position: -5px -5px;
+    background-position: -262px -10px;
 }
 
 .mongodb {
-    width: 64px; height: 64px;
-    background-position: -239px -153px;
+    background-position: -262px -94px;
 }
 
 .node {
-    width: 64px; height: 64px;
-    background-position: -5px -239px;
+    background-position: -262px -178px;
 }
 
 .nuxt {
-    width: 64px; height: 64px;
-    background-position: -79px -239px;
+    background-position: -10px -262px;
 }
 
 .postcss {
-    width: 64px; height: 64px;
-    background-position: -153px -239px;
+    background-position: -94px -262px;
 }
 
 .prettier {
-    width: 70px; height: 70px;
-    background-position: -85px -5px;
+    background-position: -178px -262px;
 }
 
 .sass {
-    width: 64px; height: 64px;
-    background-position: -227px -239px;
+    background-position: -262px -262px;
 }
 
 .tailwind {
-    width: 64px; height: 64px;
-    background-position: -313px -5px;
+    background-position: -346px -10px;
 }
 
 .typescript {
-    width: 70px; height: 70px;
-    background-position: -5px -85px;
+    background-position: -346px -94px;
+}
+
+.udemy {
+    background-position: -346px -178px;
 }
 
 .vite {
-    width: 64px; height: 63.5px;
-    background-position: -313px -227px;
+    background-position: -346px -262px;
 }
 
 .vue {
-    width: 64px; height: 64px;
-    background-position: -313px -79px;
+    background-position: -10px -346px;
+}
+
+.vue_mastery {
+    background-position: -262px -346px;
 }
 
 .webpack {
-    width: 64px; height: 64px;
-    background-position: -313px -153px;
+    background-position: -94px -346px;
+}
+
+.youtube {
+    background-position: -178px -346px;
+}
+
+.sprite__32 {
+    background-size: 210px 210px;
+    width: 32px;
+    height: 32px;
+}
+
+.css__32 {
+    background-position: -5px -5px;
+}
+
+.eslint__32 {
+    background-position: -47px -5px;
+}
+
+.express__32 {
+    background-position: -5px -47px;
+}
+
+.figma__32 {
+    background-position: -47px -47px;
+}
+
+.firebase__32 {
+    background-position: -89px -5px;
+}
+
+.git__32 {
+    background-position: -89px -47px;
+}
+
+.github__32 {
+    background-position: -5px -89px;
+}
+
+.gulp__32 {
+    background-position: -47px -89px;
+}
+
+.html__32 {
+    background-position: -89px -89px;
+}
+
+.javascript__32 {
+    background-position: -131px -5px;
+}
+
+.mongodb__32 {
+    background-position: -131px -47px;
+}
+
+.node__32 {
+    background-position: -131px -89px;
+}
+
+.nuxt__32 {
+    background-position: -5px -131px;
+}
+
+.postcss__32 {
+    background-position: -47px -131px;
+}
+
+.prettier__32 {
+    background-position: -89px -131px;
+}
+
+.sass__32 {
+    background-position: -131px -131px;
+}
+
+.tailwind__32 {
+    background-position: -173px -5px;
+}
+
+.typescript__32 {
+    background-position: -173px -47px;
+}
+
+.udemy__32 {
+    background-position: -173px -89px;
+}
+
+.vite__32 {
+    background-position: -173px -131px;
+}
+
+.vue__32 {
+    background-position: -5px -173px;
+}
+
+.vue_mastery__32 {
+    background-position: -131px -173px;
+}
+
+.webpack__32 {
+    background-position: -47px -173px;
+}
+
+.youtube__32 {
+    background-position: -89px -173px;
 }

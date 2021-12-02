@@ -28,9 +28,9 @@
                 />
             </div>
             <ul
+                ref="rolesList"
                 class="roles__list flex justify-center"
                 :class="{ list__visible: isListVisible }"
-                ref="rolesList"
             >
                 <li>
                     <svg
@@ -92,29 +92,26 @@ export default {
         };
     },
     mounted() {
-        new IntersectionObserver(entries => {
-            let timeout, interval;
+        new IntersectionObserver((entries, observer) => {
             if (entries[0].isIntersecting) {
                 const name = 'Siva Chandran';
                 let i = 1;
                 this.userName = 'S';
-                timeout = setTimeout(() => {
-                    interval = setInterval(() => {
+                setTimeout(() => {
+                    const interval = setInterval(() => {
                         this.userName = name.slice(0, i++);
-                        if (i === 14) {
-                            clearInterval(interval);
-                        }
+                        if (i === 14) clearInterval(interval);
                     }, 150);
                 }, 500);
-            } else {
-                this.userName = 'Siva Chandran';
-                clearTimeout(timeout);
-                clearInterval(interval);
+                observer.unobserve( entries[0].target );
             }
         }, {}).observe(this.$refs.introText);
 
-        new IntersectionObserver(entries => {
-            this.isListVisible = entries[0].isIntersecting;
+        new IntersectionObserver( (entries, observer) => {
+            if( entries[0].isIntersecting ) {
+                this.isListVisible = true;
+                observer.unobserve( entries[0].target );
+            }
         }, {}).observe(this.$refs.rolesList);
     }
 };
@@ -155,12 +152,13 @@ export default {
 }
 
 .intro__image {
-    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: -1;
     transform: translate(-50%, -50%);
+    opacity: 0.25;
+    height: 350px;
 }
 
 .roles__list {
@@ -176,22 +174,22 @@ export default {
         padding: 10px 20px 8px;
         background-color: rgba($color: $cream, $alpha: 0.9);
         border-radius: 12px;
-        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
         opacity: var(--opacity);
         transform: translateY(var(--translateY));
 
         &:nth-child(2) {
-            transition-delay: 400ms;
+            transition-delay: 400ms  !important;
         }
 
         &:nth-child(3) {
-            transition-delay: 800ms;
+            transition-delay: 800ms !important;
         }
     }
 
     &.list__visible li {
         --opacity: 1;
         --translateY: 0;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
 
     span {
