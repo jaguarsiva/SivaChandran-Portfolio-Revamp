@@ -28,8 +28,9 @@
 </template>
 
 <script>
+import heading from '~/mixins/heading';
 export default {
-    mixins: [sectionHeading],
+    mixins: [ heading ],
     data() {
         return {
             roadmap: [

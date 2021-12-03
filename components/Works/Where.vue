@@ -56,10 +56,11 @@
 </template>
 
 <script>
-import sectionHeading from '@/mixins/sectionHeading.js';
-import box from '@/mixins/box.js';
+import heading from '~/mixins/heading';
+import box from '~/mixins/box.js';
+
 export default {
-    mixins: [sectionHeading, box]
+    mixins: [heading, box]
 };
 </script>
 

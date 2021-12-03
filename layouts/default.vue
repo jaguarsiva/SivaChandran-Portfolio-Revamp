@@ -2,14 +2,24 @@
     <div class="default__layout">
         <TopPane @open-contact="openModal" />
         <Horizon />
-        <nuxt />
+        <Nuxt />
         <Contact :is-modal-open="isContactOpen" @close-contact="closeModal" />
         <FooPane />
     </div>
 </template>
 
 <script>
+import TopPane from '@/components/TopPane.vue';
+import Horizon from '@/components/Horizon.vue';
+import Contact from '@/components/Contact.vue';
+import FooPane from '@/components/FooPane.vue';
 export default {
+    components: {
+        TopPane,
+        Horizon,
+        Contact,
+        FooPane
+    },
     data() {
         return {
             isContactOpen: false
@@ -24,7 +34,7 @@ export default {
         },
         closeModal() {
             this.isContactOpen = false;
-            document.body.removeEventListener('click', this.closeModal );
+            document.body.removeEventListener('click', this.closeModal);
         }
     }
 };

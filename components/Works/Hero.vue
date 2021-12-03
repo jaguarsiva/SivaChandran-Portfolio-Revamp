@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import hero from '@/mixins/hero.js';
+import hero from '~/mixins/hero';
 export default {
     mixins: [hero]
 }

@@ -80,9 +80,11 @@
 </template>
 
 <script>
+import heading from '~/mixins/heading';
+import tilt from '~/mixins/tilt';
 
 export default {
-    mixins: [ sectionHeading, tiltedBackground ],
+    mixins: [ heading, tilt ],
     data() {
         return {
             isListVisible: false,

@@ -1,12 +1,12 @@
 <template>
     <header ref="header" :class="{ is__visible: isTopPaneVisible }">
         <div class="top__pane flex-row">
-            <nuxt-link
+            <NuxtLink
                 :to="{ name: 'index' }"
                 class="website__logo translate__up"
             >
                 <img src="~assets/images/logo.svg" alt="logo" />
-            </nuxt-link>
+            </NuxtLink>
             <nav>
                 <ul class="nav__list flex">
                     <li
@@ -14,12 +14,12 @@
                         :key="link.title"
                         class="nav__item"
                     >
-                        <nuxt-link
+                        <NuxtLink
                             :to="{ name: link.name }"
                             class="nav__link phage__rough translate__up"
                         >
                             {{ link.title }}
-                        </nuxt-link>
+                        </NuxtLink>
                     </li>
                 </ul>
             </nav>

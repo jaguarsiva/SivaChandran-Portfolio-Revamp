@@ -19,9 +19,8 @@ export default {
     },
     transition(to, from) {
         if (!from) return '';
-        if( from.name === 'index' ) return 'slide-left';
-        else if( from.name === 'index' ) return 'slide-right';
-        return from.meta.page < to.meta.page ? 'slide-left' : 'slide-right';
+        else if( from.name === 'index' ) return 'slide-left';
+        else return 'slide-right';
     }
 };
 </script>

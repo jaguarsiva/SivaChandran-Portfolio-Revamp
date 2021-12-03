@@ -113,11 +113,11 @@
 </template>
 
 <script>
-import sectionHeading from '@/mixins/sectionHeading.js';
-import tiltedBackground from '@/mixins/tiltedBackground.js';
+import heading from '~/mixins/heading';
+import tilt from '~/mixins/tilt';
 
 export default {
-    mixins: [sectionHeading, tiltedBackground],
+    mixins: [heading, tilt],
     data() {
         return {
             projects: [
