@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import sectionHeading from '@/mixins/sectionHeading.js';
 export default {
     mixins: [sectionHeading],
     data() {

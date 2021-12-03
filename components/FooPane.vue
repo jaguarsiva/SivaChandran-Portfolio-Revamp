@@ -28,6 +28,8 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+    position: relative;
+    z-index: 2;
     padding-block-start: 75px;
     background-color: #f1f5f5;
     overflow: hidden;

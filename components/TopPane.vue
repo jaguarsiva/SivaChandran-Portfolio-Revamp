@@ -23,7 +23,10 @@
                     </li>
                 </ul>
             </nav>
-            <button class="nav__link phage__rough contact__btn translate__up">
+            <button
+                class="nav__link phage__rough contact__btn translate__up"
+                @click.stop="handleClick"
+            >
                 Contact
             </button>
         </div>
@@ -44,12 +47,15 @@ export default {
     },
     mounted() {
         const context = this;
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                context.isTopPaneVisible = entry.isIntersecting;
-            });
+        const observer = new IntersectionObserver( entries => {
+            context.isTopPaneVisible = entries[0].isIntersecting;
         }, {});
         observer.observe(this.$refs.header);
+    },
+    methods: {
+        handleClick() {
+            this.$emit('open-contact');
+        }
     }
 };
 </script>
@@ -75,10 +81,19 @@ header {
 
 .website__logo {
     border-radius: 50%;
+    height: 84px;
+    width: 84px;
 
     &:focus-visible {
         outline: 0;
         box-shadow: 0 0 0 3px $tomato, 0 0 0 6px $yellow;
+    }
+
+    img {
+        height: 84px;
+        width: 84px;
+        border-radius: inherit;
+        border: 3px solid $cream;
     }
 }
 
@@ -126,6 +141,7 @@ header {
 
 .contact__btn {
     transition-delay: 0.8s;
+    cursor: pointer;
 }
 
 .translate__up {

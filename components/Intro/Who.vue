@@ -80,8 +80,6 @@
 </template>
 
 <script>
-import sectionHeading from '@/mixins/sectionHeading.js';
-import tiltedBackground from '@/mixins/tiltedBackground.js';
 
 export default {
     mixins: [ sectionHeading, tiltedBackground ],

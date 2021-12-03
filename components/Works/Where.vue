@@ -17,7 +17,7 @@
                 <h3 class="tahu">Just Code and Chill</h3>
                 <p class="biko__regular">
                     Kudos to the creators and instructors from the below
-                    platforms for teaching me and taking me through this
+                    platforms for teaching and taking me through this
                     exciting journey.
                 </p>
                 <ul class="flex">

@@ -58,3 +58,21 @@
 		transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
 	}
 }
+
+.slide-left-enter, .slide-right-leave-to {
+    transform: translateX(100vw);
+}
+
+.slide-right-enter, .slide-left-leave-to  {
+    transform: translateX(-100vw);
+}
+
+.slide-left-enter-to, .slide-left-leave,
+.slide-right-enter-to, .slide-right-leave {
+    transform: translateX(0);
+}
+
+.slide-left-enter-active, .slide-left-leave-active,
+.slide-right-enter-active, .slide-right-leave-active {
+    transition: transform 0.5s ease-in-out;
+}

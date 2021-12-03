@@ -16,6 +16,12 @@ export default {
         Hero,
         What,
         How
+    },
+    transition(to, from) {
+        if (!from) return '';
+        if( from.name === 'index' ) return 'slide-left';
+        else if( from.name === 'index' ) return 'slide-right';
+        return from.meta.page < to.meta.page ? 'slide-left' : 'slide-right';
     }
 };
 </script>

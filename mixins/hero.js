@@ -3,24 +3,30 @@ export default {
         return {
             isHeroVisible: true,
             rotateX: 0,
-            rotateY: 0
+            rotateY: 0,
+            translateX: 0,
+            translateY: 0
         };
     },
     computed: {
         transform() {
-            return `--rotateX: ${this.rotateX}deg; --rotateY: ${this.rotateY}deg;`;
+            return `--rotateX: ${this.rotateX}deg; --rotateY: ${this.rotateY}deg; --translateX: ${this.translateX}px; --translateY: ${this.translateY}px;`;
         }
     },
     methods: {
         handleMouseMove(event) {
-            this.rotateX = (window.innerWidth / 2 - event.pageX) / 50;
-            this.rotateY = (window.innerHeight / 2 - event.pageY) / 50;
+            const x = window.innerWidth / 2 - event.pageX;
+            const y = window.innerHeight / 2 - event.pageY;
+            this.translateX = x / 8;
+            this.translateY = y / 4;
+            this.rotateX = x / -22;
+            this.rotateY = (y > 0) ? (y / 15) : (y / 10);
         }
     },
     mounted() {
         new IntersectionObserver(
             entries => { this.isHeroVisible = entries[0].isIntersecting; },
-            { threshold: 1 }
+            { threshold: 0.5 }
         ).observe(this.$refs.heroText);
     }
 };

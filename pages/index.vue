@@ -15,6 +15,10 @@ export default {
         Hero,
         Who,
         Itiernary
+    },
+    transition(to, from) {
+        if (!from) return '';
+        return from.meta.pageNo < to.meta.pageNo ? 'slide-left' : 'slide-right';
     }
 };
 </script>
