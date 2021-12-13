@@ -152,6 +152,10 @@ export default {
         transition: opacity 250ms linear
             calc(var(--transition-delay, 0s) + 0.25s);
     }
+
+    @media (max-width: 1023px) {
+        font-size: rem(18);
+    }
 }
 
 .roadmap__title {
@@ -163,6 +167,10 @@ export default {
         opacity: 1;
         transition: opacity 250ms linear
             calc(var(--transition-delay, 0s) + 0.5s);
+    }
+
+    @media (max-width: 1023px) {
+        font-size: rem(20);
     }
 }
 </style>

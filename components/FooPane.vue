@@ -1,12 +1,12 @@
 <template>
     <footer ref="footer" :class="{ footer__visible: isFooterVisible }">
         <p class="flex-center">
-            <span class="tahu"> Made with </span>
+            <span class="tahu first"> Made with </span>
             <span class="heartin relative">
                 <img src="~assets/images/heart.svg" alt="heart" class="heart">
                 <img src="~assets/images/hands.svg" alt="hands" class="hands">
             </span>
-            <span class="tahu"> by Siva Chandran </span>
+            <span class="tahu last"> by Siva Chandran </span>
         </p>
     </footer>
 </template>
@@ -30,7 +30,8 @@ export default {
 footer {
     position: relative;
     z-index: 2;
-    padding-block-start: 75px;
+    padding-block-start: 125px;
+    padding-inline: 20px;
     background-color: #f1f5f5;
     overflow: hidden;
 }
@@ -40,50 +41,69 @@ p {
 }
 
 span {
+    display: block;
     font-size: rem(42);
     line-height: 2;
     color: $black;
     opacity: 0;
     transform: translateY(50px);
-    width: 250px;
+    width: fit-content;
     text-align: right;
 
-    .footer__visible & {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 500ms ease-out 500ms, transform 500ms ease-out 500ms;
+    @media (max-width: 1023px) {
+        font-size: rem(36);
     }
 }
 
 .heartin {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: fit-content;
 }
 
 .hands {
-    position: absolute;
-    bottom: 0;
     transform: translateY( var(--translateY, 250px) );
+    width: 250px;
+
+    @media (max-width: 1023px) {
+        width: 150px;
+    }
 }
 
 .heart {
     --scale3d: 0, 0, 0;
     position: absolute;
-    top: 0;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%) scale3d( var(--scale3d) );
+    width: 150px;
+
+    @media (max-width: 1023px) {
+        width: 110px;
+    }
 }
 
 .footer__visible {
     .hands {
         --translateY: 0px;
-        transition: transform 500ms ease-out 750ms;
+        transition: transform 400ms ease-out 800ms;
     }
 
     .heart {
         --scale3d: 1, 1, 1;
-        transition: transform 500ms ease-out 1250ms;
+        transition: transform 400ms ease-out 1200ms;
+    }
+
+    span {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .first {
+        transition: opacity 400ms ease-out 400ms, transform 400ms ease-out 400ms;
+    }
+
+    .last {
+        transition: opacity 400ms ease-out 1600ms, transform 400ms ease-out 1600ms;
     }
 }
 

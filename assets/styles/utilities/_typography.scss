@@ -89,4 +89,8 @@
         --scale: 1;
         transition: transform 0.4s ease-out 0.5s;
     }
+
+    @media (max-width: 1023px) {
+        font-size: rem(30);
+    }
 }

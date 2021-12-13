@@ -397,12 +397,18 @@ export default {
         @media (max-width: 1250px) {
             right: 600px;
         }
+
+        @media (max-width: 1023px) {
+            top: 150px;
+            right: 900px;
+        }
     }
 }
 
 .works__group {
     max-width: 924px;
     margin: 100px auto 0;
+    padding: 0 25px;
     position: relative;
 }
 
@@ -417,11 +423,23 @@ export default {
     .start__odd & {
         transform: translateX(-100%);
     }
+
+    @media (max-width: 1023px) {
+        position: static;
+        transform: none !important;
+        margin: 0 auto 50px;
+    }
+}
+
+.cards__list {
+    @media (max-width: 1023px) {
+        gap: 50px;
+    }
 }
 
 .card__item {
     display: flex;
-    padding: 50px 25px;
+    padding: 50px 0;
     width: 100%;
     position: relative;
 
@@ -471,6 +489,16 @@ export default {
         transform: translateX(-50%) translateY(-50%);
         border-radius: 50%;
         box-shadow: 0 0 0 4px $tomato, 0 0 0 8px $cream;
+    }
+
+    @media (max-width: 1023px) {
+        padding: 0;
+        justify-content: center !important;
+
+        &::before,
+        &::after {
+            display: none;
+        }
     }
 }
 

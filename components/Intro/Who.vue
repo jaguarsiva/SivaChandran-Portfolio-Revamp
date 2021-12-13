@@ -119,6 +119,10 @@ export default {
 
 <style lang="scss" scoped>
 
+.intro__section {
+    padding-inline: 20px;
+}
+
 .intro__box {
     margin-block-start: 150px;
 }
@@ -136,19 +140,24 @@ export default {
 .intro__text:nth-child(3) {
     font-size: rem(50);
     line-height: 1.25;
-}
 
-.intro__text:nth-child(2) {
-    font-size: rem(150);
-    line-height: 1.5;
-    color: #fff;
+    @media (max-width: 1023px) {
+        font-size: rem(40);
+    }
 }
 
 .typewriter {
+    font-size: rem(150);
+    line-height: 1.5;
+    color: #fff;
     border-right: 5px solid $cream;
     width: fit-content;
     margin: 0 auto;
     animation: blink-caret 0.75s linear infinite;
+
+    @media (max-width: 1023px) {
+        font-size: rem(120);
+    }
 }
 
 .intro__image {
@@ -197,6 +206,10 @@ export default {
         font-family: 'Biko-Regular', sans-serif;
         font-size: rem(22);
         line-height: 1;
+
+        @media (max-width: 1023px) {
+            font-size: rem(20);
+        }
     }
 
     svg {

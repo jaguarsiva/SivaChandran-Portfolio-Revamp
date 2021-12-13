@@ -90,5 +90,9 @@ p {
             transition-delay: 2500ms;
         }
     }
+
+    @media (max-width: 1023px) {
+        justify-content: center;
+    }
 }
 </style>

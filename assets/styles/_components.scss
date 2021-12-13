@@ -134,6 +134,10 @@ main {
     opacity: 0;
     transform: translateY(250px);
 
+    @media (max-width: 1023px) {
+        flex-direction: column;
+    }
+
     &.box__visible {
         opacity: 1;
         transform: translateY(0);
@@ -180,9 +184,13 @@ main {
     }
 }
 
+@media (max-width: 1023px) {
+    .box__right, .box__left {
+        width: 100%;
+        text-align: center;
+    }
 
-@media (hover: none) and (pointer: coarse) {
-    h1 {
-       color: yellow !important;
+    .box__right {
+        height: 320px;
     }
 }

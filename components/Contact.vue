@@ -247,4 +247,22 @@ export default {
         color: hsl(0, 0, 10);
     }
 }
+
+@media (max-width: 767px) {
+    .contact__modal {
+        width: 90%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
 </style>

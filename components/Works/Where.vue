@@ -93,5 +93,9 @@ p {
 
 ul {
     gap: 24px;
+
+    @media (max-width: 1023px) {
+        justify-content: center;
+    }
 }
 </style>
