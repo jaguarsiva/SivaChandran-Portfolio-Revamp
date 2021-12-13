@@ -1,5 +1,8 @@
 <template>
-    <section class="hero__section" @mousemove="handleMouseMove">
+    <section
+        class="hero__section"
+        v-on="{ 'mousemove': canHover ? handleMouseMove : null }"
+    >
         <h1 ref="heroText" class="hero__text">Works</h1>
         <div
             class="hero__image"
@@ -18,5 +21,5 @@
 import hero from '~/mixins/hero';
 export default {
     mixins: [hero]
-}
+};
 </script>

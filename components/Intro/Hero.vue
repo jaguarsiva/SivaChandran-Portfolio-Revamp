@@ -1,11 +1,13 @@
 <template>
-    <section class="hero__section">
+    <section
+        class="hero__section"
+        v-on="{ 'mousemove': canHover ? handleMouseMove : null }"
+    >
         <h1 ref="heroText" class="hero__text">Intro</h1>
         <div
             class="hero__image"
             :class="{ is__visible: isHeroVisible }"
             :style="transform"
-            @mousemove="handleMouseMove"
         >
             <img
                 src="~assets/images/intro__hero.svg"
@@ -19,5 +21,5 @@
 import hero from '~/mixins/hero';
 export default {
     mixins: [hero]
-}
+};
 </script>

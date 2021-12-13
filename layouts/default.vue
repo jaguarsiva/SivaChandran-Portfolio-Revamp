@@ -43,6 +43,6 @@ export default {
 <style lang="scss" scoped>
 .default__layout {
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 </style>

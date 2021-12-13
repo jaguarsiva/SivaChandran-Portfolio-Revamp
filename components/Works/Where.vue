@@ -17,18 +17,37 @@
                 <h3 class="tahu">Just Code and Chill</h3>
                 <p class="biko__regular">
                     Kudos to the creators and instructors from the below
-                    platforms for teaching and taking me through this
-                    exciting journey.
+                    platforms for teaching and taking me through this exciting
+                    journey.
                 </p>
                 <ul class="flex">
                     <li>
-                        <a href="#" class="icons__sprite youtube"> &nbsp; </a>
+                        <a
+                            href="https://www.youtube.com/"
+                            class="icons__sprite youtube"
+                            title="Youtube"
+                            target="__blank"
+                        >
+                            &nbsp;
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="icons__sprite udemy"> &nbsp; </a>
+                        <a
+                            href="https://www.udemy.com/"
+                            class="icons__sprite udemy"
+                            title="Udemy"
+                            target="__blank"
+                        >
+                            &nbsp;
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="icons__sprite vue_mastery">
+                        <a
+                            href="https://www.vuemastery.com/"
+                            class="icons__sprite vue_mastery"
+                            title="Vue Mastery"
+                            target="__blank"
+                        >
                             &nbsp;
                         </a>
                     </li>

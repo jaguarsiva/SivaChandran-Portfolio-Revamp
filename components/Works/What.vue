@@ -17,7 +17,10 @@
                 v-for="(works, workIndex) in projects"
                 :key="workIndex"
                 class="works__group"
-                :class="{ start__odd: works.startOdd, start__even: !works.startOdd }"
+                :class="{
+                    start__odd: works.startOdd,
+                    start__even: !works.startOdd
+                }"
             >
                 <h3 class="works__title tahu">{{ works.title }}</h3>
                 <ul class="cards__list flex-col align-center">
@@ -222,7 +225,8 @@ export default {
                         },
                         {
                             title: 'User Manager',
-                            description: 'Web application built without any frameworks',
+                            description:
+                                'Web application built without any frameworks',
                             link: 'https://user-manager-01.netlify.app/',
                             stack: [
                                 {
@@ -271,7 +275,10 @@ export default {
                                 'An building construction company offering services across TN',
                             link: 'https://chozha-cc.netlify.app/',
                             stack: [
-                                { title: 'Figma', link: 'https://www.figma.com/' },
+                                {
+                                    title: 'Figma',
+                                    link: 'https://www.figma.com/'
+                                },
                                 {
                                     title: 'HTML',
                                     link: 'https://www.w3schools.com/html/'
@@ -296,7 +303,10 @@ export default {
                                 'Building eternal designs, detailing, project management, software development',
                             link: 'http://forevertechnologies.biz',
                             stack: [
-                                { title: 'Figma', link: 'https://www.figma.com/' },
+                                {
+                                    title: 'Figma',
+                                    link: 'https://www.figma.com/'
+                                },
                                 { title: 'Vue', link: 'https://vuejs.org/' },
                                 {
                                     title: 'CSS',
@@ -312,7 +322,8 @@ export default {
                     items: [
                         {
                             title: 'Pixel Resizer',
-                            description: 'Tool used to resize CSS declarations while using CSS sprites',
+                            description:
+                                'Tool used to resize CSS declarations while using CSS sprites',
                             noLogo: true,
                             link: 'https://pixel-resizer.netlify.app/',
                             stack: [
@@ -332,7 +343,8 @@ export default {
                         },
                         {
                             title: 'SQL Super',
-                            description: 'NPM package to perform basic SQL CRUD operations without writing SQL queries',
+                            description:
+                                'NPM package to perform basic SQL CRUD operations without writing SQL queries',
                             noLogo: true,
                             link: 'https://www.npmjs.com/package/sql-super',
                             stack: [
@@ -341,45 +353,55 @@ export default {
                                     link: 'https://www.w3schools.com/js/'
                                 }
                             ]
-                        },
+                        }
                     ]
                 }
             ]
         };
     },
     mounted() {
-        const observer = new IntersectionObserver( (entries, observer) => {
-            entries.forEach( entry => {
-                if( entry.isIntersecting ) {
-                    entry.target.classList.add('is__visible');
-                    observer.unobserve( entry.target );
-                }
-            });
-        }, { threshold: 0.5 } );
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is__visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
-        this.$refs.worksOuter.querySelectorAll('.card__item').forEach( item => {
-            observer.observe( item );
+        this.$refs.worksOuter.querySelectorAll('.card__item').forEach(item => {
+            observer.observe(item);
         });
     }
 };
 </script>
 
 <style lang="scss" scoped>
-
 .tilted__section {
     &::before {
         left: auto;
         right: 0;
-        top: 250px;
     }
 
     &.is__visible::before {
+        top: 250px;
         --rotate: 15deg;
+
+        @media (max-width: 1350px) {
+            right: 400px;
+        }
+
+        @media (max-width: 1250px) {
+            right: 600px;
+        }
     }
 }
 
 .works__group {
-    max-width: 1024px;
+    max-width: 924px;
     margin: 100px auto 0;
     position: relative;
 }
@@ -399,19 +421,22 @@ export default {
 
 .card__item {
     display: flex;
-    padding-block: 50px;
+    padding: 50px 25px;
     width: 100%;
     position: relative;
 
-    .start__odd &:nth-child(odd), .start__even &:nth-child(even) {
+    .start__odd &:nth-child(odd),
+    .start__even &:nth-child(even) {
         justify-content: flex-end;
     }
 
-    .start__odd &:nth-child(even), .start__even &:nth-child(odd) {
+    .start__odd &:nth-child(even),
+    .start__even &:nth-child(odd) {
         justify-content: flex-start;
     }
 
-    &::before, &::after {
+    &::before,
+    &::after {
         content: '';
         position: absolute;
         left: 50%;
@@ -443,22 +468,22 @@ export default {
         width: 18px;
         height: 18px;
         background-color: $yellow;
-        transform: translateX( -50% ) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
         border-radius: 50%;
         box-shadow: 0 0 0 4px $tomato, 0 0 0 8px $cream;
     }
 }
 
 .work__card {
-    width: 425px;
-    gap: 25px;
+    width: 375px;
+    gap: 18px;
     background-color: $cream;
     color: $black;
     border-radius: 18px;
     box-shadow: $shadow;
-    padding: 25px 20px;
+    padding: 20px 18px;
     opacity: 0;
-    transform: translateX( var(--offsetX) );
+    transform: translateX(var(--offsetX));
     transition: opacity 500ms ease-out 0.5s, transform 500ms ease-out 0.5s;
 
     .start__odd .card__item:nth-child(odd) &,
@@ -481,30 +506,31 @@ export default {
     display: grid;
     grid-template-columns: 1fr 64px;
     grid-template-rows: 30px 1fr;
-    column-gap: 9px;
+    column-gap: 6px;
 }
 
 .work__title {
-    font-size: rem(22);
-    line-height: 1;
+    font-size: rem(18);
+    line-height: 1.5;
     color: $black;
 }
 
 .work__description {
     grid-row: 2 / 3;
-    font-size: rem(17);
+    font-size: rem(15);
     line-height: 1.5;
     color: hsl(0, 0, 55%);
 }
 
 .work__logo {
-    width: 64px;
+    height: 64px;
     object-fit: cover;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     color: rgba($color: $black, $alpha: 0.8);
     perspective: 300px;
     animation: card 2.5s ease-in-out infinite alternate-reverse;
+    place-self: center;
 }
 
 .card__cover {
@@ -521,7 +547,9 @@ export default {
         object-fit: cover;
     }
 
-    &::before, &::after, .cover__green {
+    &::before,
+    &::after,
+    .cover__green {
         content: '';
         position: absolute;
         top: 8px;
@@ -541,7 +569,7 @@ export default {
     }
 
     .cover__green {
-        background-color: #29BD4C;
+        background-color: #29bd4c;
         left: 42px;
     }
 }

@@ -61,11 +61,23 @@ export default {
                 {
                     title: 'Core',
                     items: [
-                        { title: 'HTML', link: 'https://www.w3schools.com/html/' },
-                        { title: 'CSS', link: 'https://www.w3schools.com/css/' },
-                        { title: 'Javascript', link: 'https://www.w3schools.com/js/' },
+                        {
+                            title: 'HTML',
+                            link: 'https://www.w3schools.com/html/'
+                        },
+                        {
+                            title: 'CSS',
+                            link: 'https://www.w3schools.com/css/'
+                        },
+                        {
+                            title: 'Javascript',
+                            link: 'https://www.w3schools.com/js/'
+                        },
                         { title: 'SASS', link: 'https://sass-lang.com/' },
-                        { title: 'Typescript', link: 'https://www.typescriptlang.org/' }
+                        {
+                            title: 'Typescript',
+                            link: 'https://www.typescriptlang.org/'
+                        }
                     ]
                 },
                 {
@@ -84,7 +96,10 @@ export default {
                         { title: 'Node', link: 'https://nodejs.org/en/' },
                         { title: 'Express', link: 'https://expressjs.com/' },
                         { title: 'MongoDB', link: 'https://www.mongodb.com/' },
-                        { title: 'Firebase', link: 'https://firebase.google.com/' }
+                        {
+                            title: 'Firebase',
+                            link: 'https://firebase.google.com/'
+                        }
                     ]
                 },
                 {
@@ -110,9 +125,9 @@ export default {
     },
     mounted() {
         new IntersectionObserver((entries, observer) => {
-            if( entries[0].isIntersecting ) {
+            if (entries[0].isIntersecting) {
                 this.isSkillsVisible = true;
-                observer.unobserve( entries[0].target );
+                observer.unobserve(entries[0].target);
             }
         }, {}).observe(this.$refs.skillsOuter);
     }
@@ -120,9 +135,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.what__section {
+    padding-bottom: 50px;
+}
 
 .what__section.is__visible::before {
     top: 100px;
+}
+
+@media (max-width: 1440px) {
+    .what__section.is__visible::before {
+        top: 140px;
+    }
 }
 
 .skills__outer {
@@ -222,11 +246,16 @@ export default {
         flex-grow: 1;
         background-color: rgba($color: $cream, $alpha: 0.8);
         border-radius: 24px;
-        padding-inline: 30px;
         width: 100%;
         box-shadow: $shadow;
         overflow: hidden;
         opacity: 0;
+    }
+
+    @media (max-width: 1250px) {
+        .skill__list {
+            gap: 0;
+        }
     }
 
     .skill__item {

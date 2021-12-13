@@ -16,34 +16,35 @@ main {
 }
 
 .hero__text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    height: calc(100vh - 150px);
+    width: 100%;
     z-index: 3;
 }
 
 .hero__image {
-    position: fixed;
-    left: 0;
-    width: 100vw;
-    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 300px);
+    position: fixed;
     top: 150px;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: calc(100vh - 300px);
 
     img {
         --opacity: 0;
         height: 100%;
-        max-height: 0;
+        max-height: 400px;
         max-width: 600px;
         opacity: var(--opacity);
         transform-style: preserve-3d;
-        transition:
-            opacity 200ms ease-in 200ms,
-            height 300ms ease-in 200ms;
+        transition: opacity 200ms ease-in 200ms;
         transform:
             perspective(750px)
             translateX(var(--translateX, 0px))
@@ -55,7 +56,6 @@ main {
 
     &.is__visible img {
         --opacity: 1;
-        max-height: 400px;
     }
 }
 
@@ -79,11 +79,17 @@ main {
         background-color: $cream;
         opacity: 0.08;
         transform: rotate(var(--rotate));
-        transition: transform 750ms ease-out 500ms;
+        transition: all 750ms ease-in-out 500ms;
     }
 
     &.is__visible::before {
         --rotate: -20deg;
+    }
+}
+
+@media (max-width: 1440px) {
+    .tilted__section::before {
+        top: 40px;
     }
 }
 
@@ -119,6 +125,7 @@ main {
 
 .box {
     position: relative;
+    width: calc(100vw - 50px);
     max-width: 1024px;
     margin: 100px auto 0;
     background-color: rgba($color: $cream, $alpha: 0.75);
@@ -170,5 +177,12 @@ main {
         a {
             text-decoration: underline;
         }
+    }
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+    h1 {
+       color: yellow !important;
     }
 }
