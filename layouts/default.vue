@@ -5,6 +5,7 @@
         <Nuxt />
         <Contact :is-modal-open="isContactOpen" @close-contact="closeModal" />
         <FooPane />
+        <Loader />
     </div>
 </template>
 
@@ -13,17 +14,27 @@ import TopPane from '@/components/TopPane.vue';
 import Horizon from '@/components/Horizon.vue';
 import Contact from '@/components/Contact.vue';
 import FooPane from '@/components/FooPane.vue';
+import Loader from '@/components/Loader.vue';
 export default {
     components: {
         TopPane,
         Horizon,
         Contact,
-        FooPane
+        FooPane,
+        Loader
     },
     data() {
         return {
             isContactOpen: false
         };
+    },
+    mounted() {
+        if( document && document.fonts ) {
+            document.fonts.ready.then(function () {
+                document.body.classList.add('fonts__loaded');
+            });
+        }
+        else document.body.classList.add('fonts__loaded');
     },
     methods: {
         openModal() {

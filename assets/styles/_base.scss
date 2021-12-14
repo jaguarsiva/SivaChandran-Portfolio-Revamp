@@ -10,7 +10,7 @@
 
 @supports (scrollbar-color: red red) {
     :root {
-        scrollbar-color: rgba($color: $cream, $alpha: 0.75) rgba($color: #000, $alpha: 0.75);
+        scrollbar-color: $cream rgba($color: #000, $alpha: 0.9);
         scrollbar-width: thin;
     }
 }
@@ -21,11 +21,11 @@
     }
 
     ::-webkit-scrollbar-track {
-        background: rgba($color: #000, $alpha: 0.75);
+        background: rgba($color: #000, $alpha: 0.9);
     }
 
     ::-webkit-scrollbar-thumb {
-        background: rgba($color: $cream, $alpha: 0.75);
+        background: $cream;
     }
 }
 
@@ -41,6 +41,11 @@ body {
     color: $cream;
     height: 100%;
     background-color: $tomato;
+    overflow: hidden;
+
+    &.fonts__loaded {
+        overflow: visible;
+    }
 }
 
 ul,

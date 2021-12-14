@@ -14,10 +14,7 @@
         <div class="intro__box">
             <div class="intro__texts relative">
                 <span class="tahu intro__text">I am</span>
-                <span
-                    ref="introText"
-                    class="tahu intro__text typewriter"
-                >
+                <span ref="introText" class="tahu intro__text typewriter">
                     {{ userName }}
                 </span>
                 <span class="tahu intro__text">& I do code</span>
@@ -84,7 +81,7 @@ import heading from '~/mixins/heading';
 import tilt from '~/mixins/tilt';
 
 export default {
-    mixins: [ heading, tilt ],
+    mixins: [heading, tilt],
     data() {
         return {
             isListVisible: false,
@@ -103,14 +100,14 @@ export default {
                         if (i === 14) clearInterval(interval);
                     }, 150);
                 }, 500);
-                observer.unobserve( entries[0].target );
+                observer.unobserve(entries[0].target);
             }
         }, {}).observe(this.$refs.introText);
 
-        new IntersectionObserver( (entries, observer) => {
-            if( entries[0].isIntersecting ) {
+        new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
                 this.isListVisible = true;
-                observer.unobserve( entries[0].target );
+                observer.unobserve(entries[0].target);
             }
         }, {}).observe(this.$refs.rolesList);
     }
@@ -118,9 +115,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .intro__section {
     padding-inline: 20px;
+
+    &::before {
+        background: rgba($color: $cream, $alpha: 0.08);
+    }
 
     &.is__visible::before {
         @media (max-width: 580px) {
@@ -203,7 +203,7 @@ export default {
         transform: translateY(var(--translateY));
 
         &:nth-child(2) {
-            transition-delay: 400ms  !important;
+            transition-delay: 400ms !important;
         }
 
         &:nth-child(3) {
