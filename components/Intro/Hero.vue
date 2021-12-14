@@ -1,7 +1,7 @@
 <template>
     <section
         class="hero__section"
-        v-on="{ 'mousemove': canHover ? handleMouseMove : null }"
+        v-on="{ 'mousemove': canHover ? handleMouseMove : () => {} }"
     >
         <h1 ref="heroText" class="hero__text">Intro</h1>
         <div

@@ -68,11 +68,17 @@ export default {
 
 .roadmap__outer {
     width: fit-content;
+    max-width: 90%;
     margin: 100px auto 0;
-    gap: 60px;
 }
 
 .roadmap__row {
+    position: relative;
+
+    &:not( :last-child ) {
+        padding-bottom: 60px;
+    }
+
     .is__visible &:first-child {
         --transition-delay: 1s;
     }
@@ -100,15 +106,22 @@ export default {
     &:not(:last-child)::after {
         content: '';
         position: absolute;
-        top: 100%;
+        top: 25px;
         left: 10.5px;
         height: 0;
         border-left: 4px dashed $black;
     }
 
     .is__visible &:not(:last-child)::after {
-        height: 60px;
+        height: calc(100% - 25px);
         transition: height 250ms ease-out calc(var(--transition-delay) + 0.75s);
+    }
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        column-gap: 20px;
+        row-gap: 10px;
     }
 }
 
@@ -156,6 +169,10 @@ export default {
     @media (max-width: 1023px) {
         font-size: rem(18);
     }
+
+    @media (max-width: 768px) {
+        margin: 0;
+    }
 }
 
 .roadmap__title {
@@ -171,6 +188,11 @@ export default {
 
     @media (max-width: 1023px) {
         font-size: rem(20);
+    }
+
+    @media (max-width: 768px) {
+        grid-column: 2 / 3;
+        line-height: 1.5;
     }
 }
 </style>

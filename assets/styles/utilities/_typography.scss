@@ -57,6 +57,10 @@
     &::selection {
         background: transparent;
     }
+
+    @media (max-width: 767px) {
+        font-size: 50vw;
+    }
 }
 
 .section__heading {

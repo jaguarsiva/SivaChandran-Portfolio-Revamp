@@ -76,3 +76,16 @@
 .slide-right-enter-active, .slide-right-leave-active {
     transition: transform 0.5s ease-in-out;
 }
+
+.translate__up {
+    transition-property: transform;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+    transform: translateY(-150px);
+    pointer-events: none;
+
+    .is__visible & {
+        transform: translateY(0);
+        pointer-events: all;
+    }
+}

@@ -1,9 +1,9 @@
 <template>
     <button
-        class="hamburger"
+        ref="hamburger"
+        class="hamburger translate__up"
         type="button"
         @click="handleClick"
-        ref="hamburger"
     >
         <span class="hamburger__box">
             <span class="hamburger__inner"> &nbsp; </span>
@@ -30,9 +30,7 @@ export default {
     padding: 15px 15px;
     display: inline-block;
     cursor: pointer;
-    transition-property: filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
+    transition-delay: 200ms;
     font: inherit;
     color: inherit;
     text-transform: none;
@@ -126,7 +124,7 @@ export default {
         transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .hamburger {
         display: none;
     }

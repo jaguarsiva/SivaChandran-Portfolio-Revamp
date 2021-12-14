@@ -137,15 +137,26 @@ export default {
 <style lang="scss" scoped>
 .what__section {
     padding-bottom: 50px;
-}
 
-.what__section.is__visible::before {
-    top: 100px;
-}
+    &.is__visible::before {
+        top: 100px;
 
-@media (max-width: 1440px) {
-    .what__section.is__visible::before {
-        top: 140px;
+        @media (max-width: 1440px) {
+            top: 140px;
+        }
+
+        @media (max-width: 1024px) {
+            left: 300px;
+        }
+
+        @media (max-width: 768px) {
+            left: 450px;
+        }
+
+        @media (max-width: 580px) {
+            top: 0;
+            left: 900px;
+        }
     }
 }
 
@@ -384,6 +395,43 @@ export default {
         &:nth-child(5) {
             --delay: 15700ms;
             --total: 2;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 0 0 75px;
+
+        .road,
+        &::after {
+            display: none;
+        }
+
+        .skill__list {
+            opacity: 1 !important;
+        }
+
+        .skill__item {
+            animation: card 2s ease-in-out infinite alternate-reverse;
+
+            &:nth-child(1) {
+                animation-delay: 100ms !important;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 200ms !important;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 300ms !important;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 400ms !important;
+            }
+
+            &:nth-child(5) {
+                animation-delay: 500ms !important;
+            }
         }
     }
 }

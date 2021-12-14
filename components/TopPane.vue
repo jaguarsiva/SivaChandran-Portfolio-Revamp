@@ -1,6 +1,6 @@
 <template>
     <header ref="header" :class="{ is__visible: isTopPaneVisible }">
-        <div class="top__pane flex-row" ref="topPane">
+        <div ref="topPane" class="top__pane flex-row">
             <NuxtLink
                 :to="{ name: 'index' }"
                 class="website__logo translate__up"
@@ -23,8 +23,18 @@
                         </NuxtLink>
                     </li>
                     <li class="nav__item">
+                        <a
+                            href="https://drive.google.com/file/d/1zPHbo1EAtRp0l2wU1IG-BZBxPGbX4SA1/view?usp=sharing"
+                            target="__blank"
+                            class="nav__link phage__rough nav__btn resume__btn translate__up"
+                            @click.stop="handleLinkClick"
+                        >
+                            Resume
+                        </a>
+                    </li>
+                    <li class="nav__item">
                         <button
-                            class="nav__link phage__rough contact__btn translate__up"
+                            class="nav__link phage__rough nav__btn contact__btn translate__up"
                             @click.stop="handleClick"
                         >
                             Contact
@@ -66,7 +76,7 @@ export default {
             this.handleLinkClick();
         },
         handleLinkClick() {
-            if( process.client && window.innerWidth < 768 ) {
+            if( process.client && window.innerWidth < 769 ) {
                 this.$refs.topPane.classList.remove('show__nav');
                 document.body.classList.remove('is__frozen');
             }
@@ -82,11 +92,16 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
+
+    &.is__visible {
+        z-index: 999;
+    }
 }
 
 .top__pane {
     height: 150px;
-    width: 100%;
+    width: 100vw;
     padding-inline: 40px;
     position: fixed;
     top: 0;
@@ -107,8 +122,8 @@ header {
     }
 
     img {
-        height: 84px;
-        width: 84px;
+        height: 100%;
+        width: 100%;
         border-radius: inherit;
         border: 3px solid $cream;
     }
@@ -128,15 +143,15 @@ nav {
     }
 
     &:first-child .nav__link {
-        transition-delay: 0.2s;
+        transition-delay: 300ms;
     }
 
     &:nth-child(2) .nav__link {
-        transition-delay: 0.4s;
+        transition-delay: 500ms;
     }
 
     &:nth-child(3) .nav__link {
-        transition-delay: 0.6s;
+        transition-delay: 700ms;
     }
 
     &:last-child {
@@ -168,27 +183,27 @@ nav {
     }
 }
 
-.contact__btn {
-    transition-delay: 0.8s;
-    cursor: pointer;
+.resume__btn {
+    transition-delay: 900ms;
 }
 
-.translate__up {
-    transition-property: transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-    transform: translateY(-150px);
-    pointer-events: none;
+.contact__btn {
+    transition-delay: 1100ms;
+}
 
-    .is__visible & {
-        transform: translateY(0);
-        pointer-events: all;
+@media (max-width: 840px) {
+    .nav__list {
+        gap: 15px;
+    }
+
+    .nav__item:last-child {
+        margin-left: 0;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     nav {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100vw;
@@ -197,6 +212,7 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: -1;
 
         &::before, &::after {
             content: '';
@@ -226,8 +242,8 @@ nav {
 
     .top__pane {
         height: 120px;
-        padding-left: 20px;
-        padding-right: 10px;
+        padding-left: 30px;
+        padding-right: 20px;
     }
 
     .show__nav nav {
@@ -256,6 +272,10 @@ nav {
             &:nth-child(4) {
                 transition: transform 200ms linear 500ms;
             }
+
+            &:nth-child(5) {
+                transition: transform 200ms linear 600ms;
+            }
         }
     }
 
@@ -270,16 +290,24 @@ nav {
 
         .nav__link {
             font-size: rem(24);
+            text-shadow: 2px 2px 4px rgba($color: #000, $alpha: 0.25);
         }
 
         .nav__link.nuxt-link-exact-active {
-            font-size: rem(30);
             color: $yellow;
 
             &::after {
                 display: none;
             }
         }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .website__logo {
+        height: 64px;
+        width: 64px;
     }
 }
 </style>

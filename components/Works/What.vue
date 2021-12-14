@@ -110,7 +110,6 @@
                     </li>
                 </ul>
             </div>
-            ;
         </div>
     </section>
 </template>
@@ -387,7 +386,7 @@ export default {
     }
 
     &.is__visible::before {
-        top: 250px;
+        top: 175px;
         --rotate: 15deg;
 
         @media (max-width: 1350px) {
@@ -400,7 +399,16 @@ export default {
 
         @media (max-width: 1023px) {
             top: 150px;
-            right: 900px;
+            right: 600px;
+        }
+
+        @media (max-width: 800px) {
+            top: 100px;
+            right: 1000px;
+        }
+
+        @media (max-width: 600px) {
+            right: 1400px;
         }
     }
 }

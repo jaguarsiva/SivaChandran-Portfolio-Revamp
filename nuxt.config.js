@@ -56,4 +56,4 @@ export default {
     generate: {
         routes: ['/skills', 'works']
     }
-}
+};

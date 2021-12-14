@@ -6,6 +6,9 @@
                 <img src="~assets/images/heart.svg" alt="heart" class="heart">
                 <img src="~assets/images/hands.svg" alt="hands" class="hands">
             </span>
+            <span class="smallscreen__only">
+                💖
+            </span>
             <span class="tahu last"> by Siva Chandran </span>
         </p>
     </footer>
@@ -34,10 +37,23 @@ footer {
     padding-inline: 20px;
     background-color: #f1f5f5;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding-block-start: 100px;
+    }
+
+    @media (max-width: 768px) {
+        padding-block: 50px;
+    }
 }
 
 p {
     gap: 50px;
+
+    @media (max-width: 600px) {
+        display: block;
+        text-align: center;
+    }
 }
 
 span {
@@ -53,11 +69,33 @@ span {
     @media (max-width: 1023px) {
         font-size: rem(36);
     }
+
+    @media (max-width: 768px) {
+        font-size: rem(28);
+    }
+
+    @media (max-width: 600px) {
+        font-style: rem(24);
+        display: inline-block;
+    }
+}
+
+.smallscreen__only {
+    display: inline-block;
+    margin-inline: 12px;
+
+    @media (min-width: 600px) {
+        display: none;
+    }
 }
 
 .heartin {
     display: inline-block;
     width: fit-content;
+
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .hands {
@@ -66,6 +104,10 @@ span {
 
     @media (max-width: 1023px) {
         width: 150px;
+    }
+
+    @media (max-width: 768px) {
+        width: 100px;
     }
 }
 
@@ -79,6 +121,10 @@ span {
 
     @media (max-width: 1023px) {
         width: 110px;
+    }
+
+    @media (max-width: 768px) {
+        width: 80px;
     }
 }
 
@@ -100,10 +146,22 @@ span {
 
     .first {
         transition: opacity 400ms ease-out 400ms, transform 400ms ease-out 400ms;
+
+        @media (max-width: 600px) {
+            transition-delay: 200ms;
+        }
+    }
+
+    .smallscreen__only {
+        transition: opacity 400ms ease-out 600ms, transform 400ms ease-out 600ms;
     }
 
     .last {
         transition: opacity 400ms ease-out 1600ms, transform 400ms ease-out 1600ms;
+
+        @media (max-width: 600px) {
+            transition-delay: 800ms;
+        }
     }
 }
 

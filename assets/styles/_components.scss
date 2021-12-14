@@ -24,6 +24,12 @@ main {
     height: calc(100vh - 150px);
     width: 100%;
     z-index: 3;
+
+
+    @media (max-width: 600px) {
+        margin-top: 0;
+        height: 100vh;
+    }
 }
 
 .hero__image {
@@ -35,16 +41,16 @@ main {
     left: 0;
     z-index: 4;
     width: 100vw;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 200px);
 
     img {
         --opacity: 0;
-        height: 100%;
+        height: 0;
         max-height: 400px;
         max-width: 600px;
         opacity: var(--opacity);
         transform-style: preserve-3d;
-        transition: opacity 200ms ease-in 200ms;
+        transition: opacity 200ms ease-in 200ms, height 200ms ease-in 200ms;
         transform:
             perspective(750px)
             translateX(var(--translateX, 0px))
@@ -52,10 +58,21 @@ main {
             translateZ(100px)
             rotateX(var(--rotateY, 0deg))
             rotateY(var(--rotateX, 0deg));
+
+
+        @media (max-width: 767px) {
+            max-height: 50vh;
+            max-width: 75vw;
+        }
+    }
+
+    @media (max-width: 600px) {
+        align-items: flex-end;
     }
 
     &.is__visible img {
         --opacity: 1;
+        height: 100%;
     }
 }
 
@@ -76,8 +93,11 @@ main {
         width: 300%;
         height: 300%;
         margin-left: -30%;
-        background-color: $cream;
-        opacity: 0.08;
+        background: linear-gradient(
+            to bottom,
+            rgba($color: $cream, $alpha: 0.08) 0%,
+            rgba($color: $cream, $alpha: 0) 50%
+        );
         transform: rotate(var(--rotate));
         transition: all 750ms ease-in-out 500ms;
     }

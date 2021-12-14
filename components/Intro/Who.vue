@@ -144,6 +144,10 @@ export default {
     @media (max-width: 1023px) {
         font-size: rem(40);
     }
+
+    @media (max-width: 767px) {
+        font-size: 7vw;
+    }
 }
 
 .typewriter {
@@ -157,6 +161,10 @@ export default {
 
     @media (max-width: 1023px) {
         font-size: rem(120);
+    }
+
+    @media (max-width: 767px) {
+        font-size: 16vw;
     }
 }
 
@@ -218,6 +226,11 @@ export default {
 
     svg path {
         fill: $tomato;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
     }
 }
 </style>
