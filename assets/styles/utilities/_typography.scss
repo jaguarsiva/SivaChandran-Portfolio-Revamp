@@ -97,4 +97,8 @@
     @media (max-width: 1023px) {
         font-size: rem(30);
     }
+
+    @media (max-width: 600px) {
+        font-size: rem(24);
+    }
 }

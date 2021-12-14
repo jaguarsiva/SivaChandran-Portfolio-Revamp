@@ -23,3 +23,19 @@ export default {
     mixins: [hero]
 };
 </script>
+
+<style lang="scss" scoped>
+
+.hero__image {
+    img {
+        @media (max-width: 767px) {
+            max-width: 65vw;
+        }
+    }
+
+    @media (max-width: 600px) {
+        height: calc(100vh - 75px);
+    }
+}
+
+</style>

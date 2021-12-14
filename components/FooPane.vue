@@ -148,19 +148,24 @@ span {
         transition: opacity 400ms ease-out 400ms, transform 400ms ease-out 400ms;
 
         @media (max-width: 600px) {
+            transition-duration: 300ms;
             transition-delay: 200ms;
         }
     }
 
     .smallscreen__only {
-        transition: opacity 400ms ease-out 600ms, transform 400ms ease-out 600ms;
+        transition-property: opacity, transform;
+        transition-timing-function: ease-out;
+        transition-duration: 300ms;
+        transition-delay: 450ms;
     }
 
     .last {
         transition: opacity 400ms ease-out 1600ms, transform 400ms ease-out 1600ms;
 
         @media (max-width: 600px) {
-            transition-delay: 800ms;
+            transition-duration: 300ms;
+            transition-delay: 600ms;
         }
     }
 }

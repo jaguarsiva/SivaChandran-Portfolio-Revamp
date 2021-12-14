@@ -28,7 +28,6 @@ main {
 
     @media (max-width: 600px) {
         margin-top: 0;
-        height: 100vh;
     }
 }
 
@@ -41,7 +40,7 @@ main {
     left: 0;
     z-index: 4;
     width: 100vw;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 300px);
 
     img {
         --opacity: 0;
@@ -67,6 +66,8 @@ main {
     }
 
     @media (max-width: 600px) {
+        top: 0;
+        height: calc(100vh - 50px);
         align-items: flex-end;
     }
 
@@ -140,6 +141,11 @@ main {
         &::before {
             background-color: $tomato;
         }
+    }
+
+
+    @media (max-width: 600px) {
+        padding-block: 75px;
     }
 }
 

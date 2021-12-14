@@ -436,6 +436,11 @@ export default {
         position: static;
         transform: none !important;
         margin: 0 auto 50px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        font-size: rem(40);
     }
 }
 
@@ -536,6 +541,11 @@ export default {
         --offsetX: 0 !important;
         opacity: 1;
     }
+
+    @media (max-width: 767px) {
+        --offsetX: 0 !important;
+        opacity: 1 !important;
+    }
 }
 
 .card__top {
@@ -621,6 +631,7 @@ export default {
     font-size: rem(20);
     line-height: 1;
     color: $cream;
+    width: 112px;
     padding: 9px 18px;
     box-shadow: 3px 3px 6px rgba($color: $black, $alpha: 0.2);
     border-radius: 18px;
@@ -643,4 +654,16 @@ export default {
         top: -100%;
     }
 }
+
+@media (max-width: 600px) {
+    .card__bottom {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .open__btn {
+        margin-left: auto;
+    }
+}
+
 </style>

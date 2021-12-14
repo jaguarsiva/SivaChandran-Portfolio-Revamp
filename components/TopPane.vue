@@ -241,9 +241,9 @@ nav {
     }
 
     .top__pane {
-        height: 120px;
-        padding-left: 30px;
-        padding-right: 20px;
+        height: 100px;
+        padding-left: 20px;
+        padding-right: 10px;
     }
 
     .show__nav nav {

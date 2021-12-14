@@ -121,6 +121,13 @@ export default {
 
 .intro__section {
     padding-inline: 20px;
+
+    &.is__visible::before {
+        @media (max-width: 580px) {
+            top: 0;
+            left: 200px;
+        }
+    }
 }
 
 .intro__box {
@@ -164,7 +171,8 @@ export default {
     }
 
     @media (max-width: 767px) {
-        font-size: 16vw;
+        font-size: 17vw;
+        margin: 12px auto;
     }
 }
 
@@ -231,6 +239,17 @@ export default {
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
+    }
+
+    @media (max-width: 600px) {
+        li {
+            padding: 6px 12px;
+            justify-content: center;
+        }
+
+        span {
+            font-size: rem(14);
+        }
     }
 }
 </style>
