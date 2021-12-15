@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav__item">
                         <a
-                            href="https://drive.google.com/file/d/1zPHbo1EAtRp0l2wU1IG-BZBxPGbX4SA1/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1P_cmNywsYuqmnkdPynOSE_c7NUR9DuYA/view?usp=sharing"
                             target="__blank"
                             class="nav__link phage__rough nav__btn resume__btn translate__up"
                             @click.stop="handleLinkClick"
@@ -92,18 +92,13 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-
-    &.is__visible {
-        z-index: 999;
-    }
 }
 
 .top__pane {
+    position: fixed;
     height: 150px;
     width: 100vw;
     padding-inline: 40px;
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 999;

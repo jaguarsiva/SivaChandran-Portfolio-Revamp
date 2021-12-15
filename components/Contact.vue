@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/jaguarsiva_ofc" target="__blank">
+                    <a href="https://twitter.com/siva_vchandran" target="__blank">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
@@ -90,7 +90,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/sivachandranv/" target="__blank">
+                    <a href="https://www.linkedin.com/in/sivavchandran/" target="__blank">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="30"
