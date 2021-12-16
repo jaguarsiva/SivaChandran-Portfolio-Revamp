@@ -208,6 +208,7 @@ nav {
         align-items: center;
         justify-content: center;
         z-index: -1;
+        pointer-events: none;
 
         &::before, &::after {
             content: '';
@@ -243,6 +244,7 @@ nav {
 
     .show__nav nav {
         z-index: 99;
+        pointer-events: all;
 
         &::before, &::after {
             transform: skew(0) scale3d(1, 1, 1);

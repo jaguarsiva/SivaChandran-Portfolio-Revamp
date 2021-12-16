@@ -553,6 +553,19 @@ export default {
     grid-template-columns: 1fr 64px;
     grid-template-rows: 30px 1fr;
     column-gap: 6px;
+
+    @media (max-width: 768px) {
+        display: block;
+        padding-right: 64px;
+        position: relative;
+
+        .work__logo {
+            position: absolute;
+            max-height: 100%;
+            top: 0;
+            right: 0;
+        }
+    }
 }
 
 .work__title {
