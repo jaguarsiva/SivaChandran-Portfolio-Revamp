@@ -1,4 +1,4 @@
-const description = 'Professional Computer Science Engineer building crazy stuff in the web. Proven ability to transform user interface designs to pixel perfect responsive websites.';
+const description = 'Professional Computer Science Engineer building crazy stuff on the web. Proven ability to transform user interface designs to pixel-perfect responsive websites.';
 
 const title = "Siva Chandran's Portfolio — Frontend Web Developer, MEVN Stack Developer";
 
