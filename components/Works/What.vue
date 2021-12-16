@@ -559,6 +559,12 @@ export default {
         padding-right: 64px;
         position: relative;
 
+        .work__title {
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+
         .work__logo {
             position: absolute;
             max-height: 100%;
