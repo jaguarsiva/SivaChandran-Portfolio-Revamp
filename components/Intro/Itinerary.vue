@@ -34,21 +34,24 @@ export default {
     data() {
         return {
             roadmap: [
-                { time: '1999', title: 'Born' },
+                { time: '1999', title: 'Landed on the Planet Earth' },
                 { time: '2016', title: 'Graduated from High School' },
                 {
                     time: '2020',
                     title: 'Completed Bachelor’s in Computer Science'
                 },
                 {
-                    time: 'Jan 2020 - Mar 2021',
-                    title: 'Intern at Zoho Corporation'
+                    time: 'Jan 2020 - Mar 2020',
+                    title: 'Project Trainee at Zoho Corporation'
+                },
+                {
+                    time: 'Jun 2020 - Feb 2021',
+                    title: 'Graduate Trainee at Zoho Corporation'
                 },
                 {
                     time: 'Mar 2021 - Jul 2021',
                     title: 'Web Developer at Zoho Corporation'
                 },
-                { time: 'Aug 2021 - Dec 2021', title: 'Freelance Developer' },
                 { time: 'Jan 2022', title: 'Software Engineer I at CreditSaison' }
             ],
             isMapVisible: false
