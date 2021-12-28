@@ -48,7 +48,8 @@ export default {
                     time: 'Mar 2021 - Jul 2021',
                     title: 'Web Developer at Zoho Corporation'
                 },
-                { time: 'Aug 2021', title: 'Freelance Developer' }
+                { time: 'Aug 2021 - Dec 2021', title: 'Freelance Developer' },
+                { time: 'Jan 2022', title: 'Software Engineer I at CreditSaison' }
             ],
             isMapVisible: false
         };
@@ -101,6 +102,10 @@ export default {
 
     .is__visible &:nth-child(6) {
         --transition-delay: 6s;
+    }
+
+    .is__visible &:nth-child(7) {
+        --transition-delay: 7s;
     }
 
     &:not(:last-child)::after {
