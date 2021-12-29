@@ -9,7 +9,7 @@
             class="section__heading"
             :class="{ heading__visible: isHeadingVisible }"
         >
-            Toys I play With
+            Toys I play with
         </h2>
 
         <div
