@@ -30,8 +30,26 @@
 <script>
 import heading from '~/mixins/heading';
 export default {
-    mixins: [ heading ],
+    mixins: [heading],
     data() {
+        const months = [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ];
+
+        const now = new Date();
+        const currentTimestamp =
+            months[now.getMonth()] + ' ' + now.getFullYear();
         return {
             roadmap: [
                 { time: '1999', title: 'Landed on the Planet Earth' },
@@ -52,16 +70,19 @@ export default {
                     time: 'Mar 2021 - Jul 2021',
                     title: 'Web Developer at Zoho Corporation'
                 },
-                { time: 'Jan 2022', title: 'Software Engineer I at CreditSaison' }
+                {
+                    time: `Jan 2022 - ${currentTimestamp}`,
+                    title: 'Software Engineer I at Credit Saison India'
+                }
             ],
             isMapVisible: false
         };
     },
     mounted() {
         new IntersectionObserver((entries, observer) => {
-            if( entries[0].isIntersecting ) {
+            if (entries[0].isIntersecting) {
                 this.isMapVisible = true;
-                observer.unobserve( entries[0].target );
+                observer.unobserve(entries[0].target);
             }
         }, {}).observe(this.$refs.roadmap);
     }
@@ -69,7 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .roadmap__outer {
     width: fit-content;
     max-width: 90%;
@@ -79,7 +99,7 @@ export default {
 .roadmap__row {
     position: relative;
 
-    &:not( :last-child ) {
+    &:not(:last-child) {
         padding-bottom: 60px;
     }
 
@@ -172,6 +192,19 @@ export default {
         opacity: 1;
         transition: opacity 250ms linear
             calc(var(--transition-delay, 0s) + 0.25s);
+    }
+
+    .roadmap__row:last-child & {
+        position: relative;
+        // color: $cs-green;
+
+        &::after {
+            content: '*';
+            position: absolute;
+            top: -8px;
+            right: 4px;
+            font-size: rem(50);
+        }
     }
 
     @media (max-width: 1023px) {
