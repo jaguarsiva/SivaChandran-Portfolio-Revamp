@@ -180,8 +180,8 @@ export default {
 }
 
 .roadmap__time {
-    display: block;
-    width: 200px;
+    display: inline-block;
+    width: 183px;
     font-size: rem(20);
     line-height: 1;
     color: $tomato;
@@ -196,13 +196,13 @@ export default {
 
     .roadmap__row:last-child & {
         position: relative;
-        // color: $cs-green;
 
         &::after {
             content: '*';
             position: absolute;
             top: -8px;
-            right: 4px;
+            right: 0;
+            transform: translateX(100%);
             font-size: rem(50);
         }
     }
@@ -213,6 +213,7 @@ export default {
 
     @media (max-width: 768px) {
         margin: 0;
+        width: fit-content;
     }
 }
 
