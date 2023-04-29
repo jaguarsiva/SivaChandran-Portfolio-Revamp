@@ -71,8 +71,16 @@ export default {
                     title: 'Web Developer at Zoho Corporation'
                 },
                 {
-                    time: `Jan 2022 - ${currentTimestamp}`,
+                    time: 'Aug 2021 - Dec 2021',
+                    title: 'Career Transition Break'
+                },
+                {
+                    time: `Jan 2022 - Mar 2023`,
                     title: 'Software Engineer I at Credit Saison India'
+                },
+                {
+                    time: `Apr 2023 - ${currentTimestamp}`,
+                    title: 'Software Engineer II at Credit Saison India'
                 }
             ],
             isMapVisible: false
