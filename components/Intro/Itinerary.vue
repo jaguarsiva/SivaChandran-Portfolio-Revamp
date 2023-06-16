@@ -139,6 +139,10 @@ export default {
         --transition-delay: 7s;
     }
 
+    .is__visible &:nth-child(8) {
+        --transition-delay: 8s;
+    }
+
     &:not(:last-child)::after {
         content: '';
         position: absolute;
