@@ -79,8 +79,12 @@ export default {
                     title: 'Software Engineer I at Credit Saison India'
                 },
                 {
-                    time: `Apr 2023 - ${currentTimestamp}`,
+                    time: `Apr 2023 - Mar 2023`,
                     title: 'Software Engineer II at Credit Saison India'
+                },
+                {
+                    time: `Apr 2024 - ${currentTimestamp}`,
+                    title: 'Senior Software Engineer at Credit Saison India'
                 }
             ],
             isMapVisible: false
@@ -137,6 +141,22 @@ export default {
 
     .is__visible &:nth-child(7) {
         --transition-delay: 7s;
+    }
+
+    .is__visible &:nth-child(8) {
+        --transition-delay: 8s;
+    }
+
+    .is__visible &:nth-child(9) {
+        --transition-delay: 9s;
+    }
+
+    .is__visible &:nth-child(10) {
+        --transition-delay: 10s;
+    }
+
+    .is__visible &:nth-child(11) {
+        --transition-delay: 11s;
     }
 
     &:not(:last-child)::after {
