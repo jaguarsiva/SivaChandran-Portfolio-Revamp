@@ -71,10 +71,6 @@ export default {
                     title: 'Web Developer at Zoho Corporation'
                 },
                 {
-                    time: 'Aug 2021 - Dec 2021',
-                    title: 'Career Transition Break'
-                },
-                {
                     time: `Jan 2022 - Mar 2023`,
                     title: 'Software Engineer I at Credit Saison India'
                 },
@@ -209,7 +205,7 @@ export default {
 
 .roadmap__time {
     display: inline-block;
-    width: 183px;
+    width: 190px;
     font-size: rem(20);
     line-height: 1;
     color: $tomato;
