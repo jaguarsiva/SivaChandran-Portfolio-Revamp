@@ -79,7 +79,7 @@ export default {
                     title: 'Software Engineer I at Credit Saison India'
                 },
                 {
-                    time: `Apr 2023 - Mar 2023`,
+                    time: `Apr 2023 - Mar 2024`,
                     title: 'Software Engineer II at Credit Saison India'
                 },
                 {
