@@ -1,7 +1,7 @@
 <template>
     <section
         class="hero__section"
-        v-on="{ 'mousemove': canHover ? handleMouseMove : () => {} }"
+        v-on="{ mousemove: canHover ? handleMouseMove : () => {} }"
     >
         <h1 ref="heroText" class="hero__text">Works</h1>
         <div
@@ -10,7 +10,7 @@
             :style="transform"
         >
             <img
-                src="~assets/images/works__hero.svg"
+                src="~/assets/images/works__hero.svg"
                 alt="Boy working on a laptop"
             />
         </div>

@@ -16,9 +16,13 @@
             <div class="box__left">
                 <h3 class="tahu">A Self Taught Developer</h3>
                 <p class="biko__regular">
-                    For me there was no bootcamps, no coding institutes either. All I had was
-                    <span class="biko__bold">only the internet and a hungry soul.</span>
-                    I showed up everyday inorder to learn more. And then slowly but steadily I found a path that I could follow.
+                    For me there was no bootcamps, no coding institutes either.
+                    All I had was
+                    <span class="biko__bold"
+                        >only the internet and a hungry soul.</span
+                    >
+                    I showed up everyday inorder to learn more. And then slowly
+                    but steadily I found a path that I could follow.
                 </p>
                 <ul class="tags flex">
                     <li>#EAT_SLEEP_CODE_REPEAT</li>
@@ -26,9 +30,20 @@
                 </ul>
             </div>
             <div class="box__right">
-                <img src="~assets/images/keyboard.jpg" alt="keyboard">
+                <img src="~/assets/images/keyboard.jpg" alt="keyboard" />
                 <span>
-                    Photo by <a href="https://unsplash.com/@nublson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="__blank">Nubelson Fernandes</a> on <a href="https://unsplash.com/s/photos/developer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="__blank">Unsplash</a>
+                    Photo by
+                    <a
+                        href="https://unsplash.com/@nublson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        target="__blank"
+                        >Nubelson Fernandes</a
+                    >
+                    on
+                    <a
+                        href="https://unsplash.com/s/photos/developer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                        target="__blank"
+                        >Unsplash</a
+                    >
                 </span>
             </div>
         </div>
@@ -39,7 +54,7 @@
 import heading from '~/mixins/heading';
 import box from '@/mixins/box.js';
 export default {
-    mixins: [heading, box],
+    mixins: [heading, box]
 };
 </script>
 
@@ -52,13 +67,12 @@ export default {
 p {
     font-size: rem(20);
     line-height: 1.75;
-    color: hsl(0, 0, 48%);
+    color: rgb(122, 122, 122);
 
     span {
         color: $tomato;
     }
 }
-
 
 .tags {
     margin-top: 24px;

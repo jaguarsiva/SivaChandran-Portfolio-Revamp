@@ -1,7 +1,7 @@
 <template>
     <section
         class="hero__section"
-        v-on="{ 'mousemove': canHover ? handleMouseMove : () => {} }"
+        v-on="{ mousemove: canHover ? handleMouseMove : () => {} }"
     >
         <h1 ref="heroText" class="hero__text">Intro</h1>
         <div
@@ -10,7 +10,7 @@
             :style="transform"
         >
             <img
-                src="~assets/images/intro__hero.svg"
+                src="~/assets/images/intro__hero.svg"
                 alt="Boy working on a laptop"
             />
         </div>
@@ -25,7 +25,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .hero__image {
     img {
         @media (max-width: 767px) {
@@ -37,5 +36,4 @@ export default {
         height: calc(100vh - 75px);
     }
 }
-
 </style>

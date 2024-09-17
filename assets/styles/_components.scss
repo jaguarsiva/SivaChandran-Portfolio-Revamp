@@ -49,14 +49,9 @@ main {
         opacity: var(--opacity);
         transform-style: preserve-3d;
         transition: opacity 200ms ease-in 200ms, height 200ms ease-in 200ms;
-        transform:
-            perspective(750px)
-            translateX(var(--translateX, 0px))
-            translateY(var(--translateY, 0px))
-            translateZ(100px)
-            rotateX(var(--rotateY, 0deg))
-            rotateY(var(--rotateX, 0deg));
-
+        transform: perspective(750px) translateX(var(--translateX, 0px))
+            translateY(var(--translateY, 0px)) translateZ(100px)
+            rotateX(var(--rotateY, 0deg)) rotateY(var(--rotateX, 0deg));
 
         @media (max-width: 767px) {
             max-height: 50vh;
@@ -129,7 +124,7 @@ main {
         z-index: -1;
         height: 100%;
         width: 100%;
-        background-image: url('~assets/images/camouflage.jpg');
+        background-image: url('~/assets/images/camouflage.jpg');
         background-size: contain;
         opacity: 0.025;
     }
@@ -141,7 +136,6 @@ main {
             background-color: $tomato;
         }
     }
-
 
     @media (max-width: 600px) {
         padding-block: 75px;
@@ -210,7 +204,8 @@ main {
 }
 
 @media (max-width: 1023px) {
-    .box__right, .box__left {
+    .box__right,
+    .box__left {
         width: 100%;
         text-align: center;
     }

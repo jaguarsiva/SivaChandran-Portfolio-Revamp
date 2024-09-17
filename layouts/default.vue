@@ -2,7 +2,7 @@
     <div class="default__layout">
         <TopPane @open-contact="openModal" />
         <Horizon />
-        <Nuxt />
+        <NuxtPage />
         <Contact :is-modal-open="isContactOpen" @close-contact="closeModal" />
         <FooPane />
         <Loader />
@@ -29,12 +29,11 @@ export default {
         };
     },
     mounted() {
-        if( document && document.fonts ) {
+        if (document && document.fonts) {
             document.fonts.ready.then(function () {
                 document.body.classList.add('fonts__loaded');
             });
-        }
-        else document.body.classList.add('fonts__loaded');
+        } else document.body.classList.add('fonts__loaded');
     },
     methods: {
         openModal() {

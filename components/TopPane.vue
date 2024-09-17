@@ -5,7 +5,7 @@
                 :to="{ name: 'index' }"
                 class="website__logo translate__up"
             >
-                <img src="~assets/images/logo.svg" alt="logo" />
+                <img src="~/assets/images/logo.svg" alt="logo" />
             </NuxtLink>
             <nav>
                 <ul class="nav__list flex">
@@ -17,7 +17,7 @@
                         <NuxtLink
                             :to="{ name: link.name }"
                             class="nav__link phage__rough translate__up"
-                            @click.native="handleLinkClick"
+                            @click="handleLinkClick"
                         >
                             {{ link.title }}
                         </NuxtLink>
@@ -76,7 +76,7 @@ export default {
             this.handleLinkClick();
         },
         handleLinkClick() {
-            if( process.client && window.innerWidth < 769 ) {
+            if (process.client && window.innerWidth < 769) {
                 this.$refs.topPane.classList.remove('show__nav');
                 document.body.classList.remove('is__frozen');
             }
@@ -210,7 +210,8 @@ nav {
         z-index: -1;
         pointer-events: none;
 
-        &::before, &::after {
+        &::before,
+        &::after {
             content: '';
             position: absolute;
             left: 0;
@@ -246,7 +247,8 @@ nav {
         z-index: 99;
         pointer-events: all;
 
-        &::before, &::after {
+        &::before,
+        &::after {
             transform: skew(0) scale3d(1, 1, 1);
         }
 
@@ -299,7 +301,6 @@ nav {
         }
     }
 }
-
 
 @media (max-width: 600px) {
     .website__logo {

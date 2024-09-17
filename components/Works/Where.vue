@@ -54,7 +54,7 @@
                 </ul>
             </div>
             <div class="box__right">
-                <img src="~assets/images/laptop.jpg" alt="laptop" />
+                <img src="~/assets/images/laptop.jpg" alt="laptop" />
                 <span class="biko__regular">
                     Photo by
                     <a
@@ -88,7 +88,7 @@ p {
     font-size: rem(20);
     line-height: 1.75;
     margin-bottom: 24px;
-    color: hsl(0, 0, 55%);
+    color: rgb(140, 140, 140);
 }
 
 ul {

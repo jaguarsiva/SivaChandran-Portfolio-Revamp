@@ -1,6 +1,8 @@
 <template>
     <section ref="horizon" class="horizon">
-        <div class="hero__bg" :class="{ is__visible: isHorizonVisible }">&nbsp;</div>
+        <div class="hero__bg" :class="{ is__visible: isHorizonVisible }">
+            &nbsp;
+        </div>
     </section>
 </template>
 
@@ -9,19 +11,20 @@ export default {
     data() {
         return {
             isHorizonVisible: false
-        }
+        };
     },
     mounted() {
         new IntersectionObserver(
-            entries => { this.isHorizonVisible = entries[0].isIntersecting; },
+            entries => {
+                this.isHorizonVisible = entries[0].isIntersecting;
+            },
             { threshold: 0.5 }
         ).observe(this.$refs.horizon);
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
 .horizon {
     position: absolute;
     top: 0;
@@ -37,7 +40,7 @@ export default {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-image: url('~assets/images/background.jpg');
+    background-image: url('~/assets/images/background.jpg');
     transition: opacity 400ms cubic-bezier(0.62, 0.02, 0.34, 1);
     opacity: 0;
 

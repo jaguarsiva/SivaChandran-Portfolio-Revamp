@@ -3,12 +3,18 @@
         <p class="flex-center">
             <span class="tahu first"> Made with </span>
             <span class="heartin relative">
-                <img src="~assets/images/heart.svg" alt="heart" class="heart">
-                <img src="~assets/images/hands.svg" alt="hands" class="hands">
+                <img
+                    src="~/assets/images/heart.svg"
+                    alt="heart"
+                    class="heart"
+                />
+                <img
+                    src="~/assets/images/hands.svg"
+                    alt="hands"
+                    class="hands"
+                />
             </span>
-            <span class="smallscreen__only">
-                💖
-            </span>
+            <span class="smallscreen__only"> 💖 </span>
             <span class="tahu last"> by Siva Chandran </span>
         </p>
     </footer>
@@ -19,14 +25,17 @@ export default {
     data() {
         return {
             isFooterVisible: false
-        }
+        };
     },
     mounted() {
-        new IntersectionObserver(entries => {
-            this.isFooterVisible = entries[0].isIntersecting;
-        }, { threshold: 0.5 }).observe(this.$refs.footer);
+        new IntersectionObserver(
+            entries => {
+                this.isFooterVisible = entries[0].isIntersecting;
+            },
+            { threshold: 0.5 }
+        ).observe(this.$refs.footer);
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -99,7 +108,7 @@ span {
 }
 
 .hands {
-    transform: translateY( var(--translateY, 250px) );
+    transform: translateY(var(--translateY, 250px));
     width: 250px;
 
     @media (max-width: 1023px) {
@@ -116,7 +125,7 @@ span {
     position: absolute;
     top: -50px;
     left: 50%;
-    transform: translateX(-50%) scale3d( var(--scale3d) );
+    transform: translateX(-50%) scale3d(var(--scale3d));
     width: 150px;
 
     @media (max-width: 1023px) {
@@ -161,7 +170,8 @@ span {
     }
 
     .last {
-        transition: opacity 400ms ease-out 1600ms, transform 400ms ease-out 1600ms;
+        transition: opacity 400ms ease-out 1600ms,
+            transform 400ms ease-out 1600ms;
 
         @media (max-width: 600px) {
             transition-duration: 300ms;
@@ -169,5 +179,4 @@ span {
         }
     }
 }
-
 </style>

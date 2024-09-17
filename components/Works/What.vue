@@ -37,33 +37,19 @@
                                 <span class="work__description biko__regular">
                                     {{ work.description }}
                                 </span>
-                                <img
+                                <!-- <img
                                     v-if="!work.noLogo"
-                                    :src="
-                                        require('../../assets/images/works/' +
-                                            work.title
-                                                .toLowerCase()
-                                                .split(' ')
-                                                .join('_') +
-                                            '/logo.png')
-                                    "
+                                    :src="work.logo"
                                     :alt="work.title + ' logo'"
                                     class="work__logo"
-                                />
+                                /> -->
                             </div>
                             <div class="card__cover">
                                 <div class="cover__green"></div>
-                                <img
-                                    :src="
-                                        require('../../assets/images/works/' +
-                                            work.title
-                                                .toLowerCase()
-                                                .split(' ')
-                                                .join('_') +
-                                            '/cover.jpg')
-                                    "
+                                <!-- <img
+                                    :src="work.cover"
                                     :alt="work.title + ' Cover Picture'"
-                                />
+                                /> -->
                             </div>
                             <div class="card__bottom flex-row">
                                 <div class="stack__list flex">
@@ -117,6 +103,257 @@
 <script>
 import heading from '~/mixins/heading';
 import tilt from '~/mixins/tilt';
+import logo from '~/assets/images/works//logo.png';
+import cover from '~/assets/images/works//logo.png';
+import { useAsyncData } from '#nuxt/vue-app';
+
+const projects = [
+    {
+        title: 'Web Applications',
+        startOdd: true,
+        items: [
+            {
+                title: 'Mobile Solutions',
+                description: 'Multi brand mobile service center, Kallakurichi',
+                link: 'https://www.mobilesolutions.co.in/',
+                stack: [
+                    {
+                        title: 'Figma',
+                        link: 'https://www.figma.com/'
+                    },
+                    { title: 'Vue', link: 'https://vuejs.org/' },
+                    {
+                        title: 'Node',
+                        link: 'https://nodejs.org/en/'
+                    },
+                    {
+                        title: 'Express',
+                        link: 'https://expressjs.com/'
+                    },
+                    {
+                        title: 'MongoDB',
+                        link: 'https://www.mongodb.com/'
+                    }
+                ]
+            },
+            {
+                title: 'Kanakku Manager',
+                description:
+                    'Expense manager to record & analyze all the transactions of the vehicle',
+                link: 'https://kanakku-manager.netlify.app/',
+                stack: [
+                    {
+                        title: 'Figma',
+                        link: 'https://www.figma.com/'
+                    },
+                    { title: 'Vue', link: 'https://vuejs.org/' },
+                    {
+                        title: 'Node',
+                        link: 'https://nodejs.org/en/'
+                    },
+                    {
+                        title: 'Express',
+                        link: 'https://expressjs.com/'
+                    },
+                    {
+                        title: 'MongoDB',
+                        link: 'https://www.mongodb.com/'
+                    }
+                ]
+            },
+            {
+                title: 'Whosapp Web',
+                description: 'Chat app cloned from "Whatsapp"',
+                link: 'https://whosapp-2c58f.web.app/',
+                stack: [
+                    { title: 'Vue', link: 'https://vuejs.org/' },
+                    {
+                        title: 'SASS',
+                        link: 'https://sass-lang.com/'
+                    },
+                    {
+                        title: 'Typescript',
+                        link: 'https://www.typescriptlang.org/'
+                    },
+                    {
+                        title: 'Firebase',
+                        link: 'https://firebase.google.com/'
+                    }
+                ]
+            },
+            {
+                title: 'Pricetracky',
+                description:
+                    'Compare mobile specs and buy from the affliate pages',
+                link: 'https://pricetracky.com/',
+                stack: [
+                    {
+                        title: 'Figma',
+                        link: 'https://www.figma.com/'
+                    },
+                    { title: 'Vue', link: 'https://vuejs.org/' },
+                    {
+                        title: 'SASS',
+                        link: 'https://sass-lang.com/'
+                    },
+                    {
+                        title: 'Node',
+                        link: 'https://nodejs.org/en/'
+                    },
+                    {
+                        title: 'Express',
+                        link: 'https://expressjs.com/'
+                    }
+                ]
+            },
+            {
+                title: 'User Manager',
+                description: 'Web application built without any frameworks',
+                link: 'https://user-manager-01.netlify.app/',
+                stack: [
+                    {
+                        title: 'HTML',
+                        link: 'https://www.w3schools.com/html/'
+                    },
+                    {
+                        title: 'CSS',
+                        link: 'https://www.w3schools.com/css/'
+                    },
+                    {
+                        title: 'Javascript',
+                        link: 'https://www.w3schools.com/js/'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: 'Landing Pages',
+        startOdd: false,
+        items: [
+            {
+                title: 'Anbu Arts and Crafts',
+                description:
+                    'Wooden statues, carvings, sculptures factory Kallakurichi',
+                link: 'https://anbu-arts.netlify.app/',
+                stack: [
+                    {
+                        title: 'HTML',
+                        link: 'https://www.w3schools.com/html/'
+                    },
+                    {
+                        title: 'CSS',
+                        link: 'https://www.w3schools.com/css/'
+                    },
+                    {
+                        title: 'Javascript',
+                        link: 'https://www.w3schools.com/js/'
+                    }
+                ]
+            },
+            {
+                title: 'Chozha Construction Company',
+                description:
+                    'An building construction company offering services across TN',
+                link: 'https://chozha-cc.netlify.app/',
+                stack: [
+                    {
+                        title: 'Figma',
+                        link: 'https://www.figma.com/'
+                    },
+                    {
+                        title: 'HTML',
+                        link: 'https://www.w3schools.com/html/'
+                    },
+                    {
+                        title: 'SASS',
+                        link: 'https://sass-lang.com/'
+                    },
+                    {
+                        title: 'PostCSS',
+                        link: 'https://postcss.org/'
+                    },
+                    {
+                        title: 'Javascript',
+                        link: 'https://www.w3schools.com/js/'
+                    }
+                ]
+            },
+            {
+                title: 'Forever Technologies',
+                description:
+                    'Building eternal designs, detailing, project management, software development',
+                link: 'http://forevertechnologies.biz',
+                stack: [
+                    {
+                        title: 'Figma',
+                        link: 'https://www.figma.com/'
+                    },
+                    { title: 'Vue', link: 'https://vuejs.org/' },
+                    {
+                        title: 'CSS',
+                        link: 'https://www.w3schools.com/css/'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        title: 'Other Works',
+        startOdd: true,
+        items: [
+            {
+                title: 'Pixel Resizer',
+                description:
+                    'Tool used to resize CSS declarations while using CSS sprites',
+                noLogo: true,
+                link: 'https://pixel-resizer.netlify.app/',
+                stack: [
+                    {
+                        title: 'HTML',
+                        link: 'https://www.w3schools.com/html/'
+                    },
+                    {
+                        title: 'CSS',
+                        link: 'https://www.w3schools.com/css/'
+                    },
+                    {
+                        title: 'Javascript',
+                        link: 'https://www.w3schools.com/js/'
+                    }
+                ]
+            },
+            {
+                title: 'SQL Super',
+                description:
+                    'NPM package to perform basic SQL CRUD operations without writing SQL queries',
+                noLogo: true,
+                link: 'https://www.npmjs.com/package/sql-super',
+                stack: [
+                    {
+                        title: 'Javascript',
+                        link: 'https://www.w3schools.com/js/'
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+projects.forEach(project => {
+    project.items.forEach(item => {
+        item.logo = import(
+            '~/assets/images/works/' +
+                item.title.toLowerCase().split(' ').join('_') +
+                '/logo.png'
+        );
+        item.cover = import(
+            '~/assets/images/works/' +
+                item.title.toLowerCase().split(' ').join('_') +
+                '/cover.png'
+        );
+    });
+});
 
 export default {
     mixins: [heading, tilt],
@@ -564,7 +801,6 @@ export default {
             margin-bottom: 6px;
         }
 
-
         .work__logo {
             position: absolute;
             max-height: 100%;
@@ -584,7 +820,7 @@ export default {
     grid-row: 2 / 3;
     font-size: rem(15);
     line-height: 1.5;
-    color: hsl(0, 0, 55%);
+    color: rgb(140, 140, 140);
 }
 
 .work__logo {
@@ -684,5 +920,4 @@ export default {
         margin-left: auto;
     }
 }
-
 </style>

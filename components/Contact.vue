@@ -1,5 +1,9 @@
 <template>
-    <aside class="contact__modal flex" :class="{ is__open: isModalOpen }" @click.stop>
+    <aside
+        class="contact__modal flex"
+        :class="{ is__open: isModalOpen }"
+        @click.stop
+    >
         <button class="close__btn" @click="closeModal">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +18,7 @@
             </svg>
         </button>
         <div class="left flex-center">
-            <img src="~assets/images/intro.png" alt="Siva Chandran cartoon" />
+            <img src="~/assets/images/intro.png" alt="Siva Chandran cartoon" />
         </div>
         <div class="right">
             <h2>Hey!</h2>
@@ -42,7 +46,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/siva_vchandran/" target="__blank">
+                    <a
+                        href="https://www.instagram.com/siva_vchandran/"
+                        target="__blank"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="30"
@@ -63,7 +70,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/siva_vchandran" target="__blank">
+                    <a
+                        href="https://twitter.com/siva_vchandran"
+                        target="__blank"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
@@ -90,7 +100,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/sivavchandran/" target="__blank">
+                    <a
+                        href="https://www.linkedin.com/in/sivavchandran/"
+                        target="__blank"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="30"
@@ -114,7 +127,12 @@
                     </a>
                 </li>
             </ul>
-            <a href="mailto:sivavchandran@gmail.com" target="__blank" class="mail biko__regular">sivavchandran@gmail.com</a>
+            <a
+                href="mailto:sivavchandran@gmail.com"
+                target="__blank"
+                class="mail biko__regular"
+                >sivavchandran@gmail.com</a
+            >
         </div>
     </aside>
 </template>
@@ -141,7 +159,7 @@ export default {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) perspective(300px) scale3d( var(--scale) );
+    transform: translate(-50%, -50%) perspective(300px) scale3d(var(--scale));
     perspective: 300px;
     transform-style: preserve-3d;
     width: 660px;
@@ -167,7 +185,7 @@ export default {
     padding: 3px;
 
     path {
-        fill: hsl(0, 0, 40);
+        fill: rgb(102, 102, 102);
     }
 
     &:hover {
@@ -188,7 +206,7 @@ export default {
     h2 {
         font-size: rem(40);
         font-weight: 700;
-        color: hsl(0, 0, 10);
+        color: rgb(26, 26, 26);
         margin-bottom: 18px;
     }
 
@@ -197,14 +215,14 @@ export default {
         line-height: 1.6;
         font-weight: 300;
         margin-bottom: 30px;
-        color: hsl(0, 0, 50);
+        color: rgb(128, 128, 128);
     }
 
     span {
         font-size: rem(18);
         line-height: 1;
         text-transform: uppercase;
-        color: hsl(0, 0, 30);
+        color: rgb(77, 77, 77);
     }
 }
 
@@ -228,11 +246,11 @@ export default {
     }
 
     path {
-        fill: hsl(0, 0, 50);
+        fill: rgb(128, 128, 128);
     }
 
     a:hover path {
-        fill: hsl(0, 0, 20);
+        fill: rgb(51, 51, 51);
     }
 
     li:nth-child(2) path:last-child {
@@ -241,10 +259,10 @@ export default {
 }
 
 .mail {
-    color: hsl(0, 0, 50);
+    color: rgb(128, 128, 128);
 
     &:hover {
-        color: hsl(0, 0, 10);
+        color: rgb(26, 26, 26);
     }
 }
 
@@ -264,5 +282,4 @@ export default {
         justify-content: flex-end;
     }
 }
-
 </style>
