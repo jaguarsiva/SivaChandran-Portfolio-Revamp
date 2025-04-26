@@ -79,8 +79,12 @@ export default {
                     title: 'Software Engineer II at Credit Saison India'
                 },
                 {
-                    time: `Apr 2024 - ${currentTimestamp}`,
+                    time: `Apr 2024 - Mar 2025`,
                     title: 'Senior Software Engineer at Credit Saison India'
+                },
+                {
+                    time: `Apr 2025 - ${currentTimestamp}`,
+                    title: 'Lead Software Engineer at Credit Saison India'
                 }
             ],
             isMapVisible: false
@@ -153,6 +157,10 @@ export default {
 
     .is__visible &:nth-child(11) {
         --transition-delay: 11s;
+    }
+
+    .is__visible &:nth-child(12) {
+        --transition-delay: 12s;
     }
 
     &:not(:last-child)::after {
