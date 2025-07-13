@@ -18,7 +18,9 @@
                 class="roadmap__row relative flex align-center"
             >
                 <div class="roadmap__point"></div>
-                <span class="roadmap__time biko__black"> {{ map.time }} </span>
+                <span class="roadmap__time biko__black">
+                    <span class="roadmap__time__text">{{ map.time }}</span>
+                </span>
                 <span class="roadmap__title biko__regular">
                     {{ map.title }}
                 </span>
@@ -115,52 +117,10 @@ export default {
         padding-bottom: 60px;
     }
 
-    .is__visible &:first-child {
-        --transition-delay: 1s;
-    }
-
-    .is__visible &:nth-child(2) {
-        --transition-delay: 2s;
-    }
-
-    .is__visible &:nth-child(3) {
-        --transition-delay: 3s;
-    }
-
-    .is__visible &:nth-child(4) {
-        --transition-delay: 4s;
-    }
-
-    .is__visible &:nth-child(5) {
-        --transition-delay: 5s;
-    }
-
-    .is__visible &:nth-child(6) {
-        --transition-delay: 6s;
-    }
-
-    .is__visible &:nth-child(7) {
-        --transition-delay: 7s;
-    }
-
-    .is__visible &:nth-child(8) {
-        --transition-delay: 8s;
-    }
-
-    .is__visible &:nth-child(9) {
-        --transition-delay: 9s;
-    }
-
-    .is__visible &:nth-child(10) {
-        --transition-delay: 10s;
-    }
-
-    .is__visible &:nth-child(11) {
-        --transition-delay: 11s;
-    }
-
-    .is__visible &:nth-child(12) {
-        --transition-delay: 12s;
+    @for $i from 1 through 15 {
+        .is__visible &:nth-child(#{$i}) {
+            --transition-delay: #{500ms * $i};
+        }
     }
 
     &:not(:last-child)::after {
@@ -174,7 +134,7 @@ export default {
 
     .is__visible &:not(:last-child)::after {
         height: calc(100% - 25px);
-        transition: height 250ms ease-out calc(var(--transition-delay) + 0.75s);
+        transition: height 250ms ease-out calc(var(--transition-delay) + 0.25s);
     }
 
     @media (max-width: 768px) {
@@ -229,13 +189,17 @@ export default {
     .roadmap__row:last-child & {
         position: relative;
 
-        &::after {
-            content: '*';
-            position: absolute;
-            top: -8px;
-            right: 0;
-            transform: translateX(100%);
-            font-size: rem(50);
+        .roadmap__time__text {
+            position: relative;
+
+            &::after {
+                content: '*';
+                position: absolute;
+                top: -8px;
+                right: 0;
+                transform: translateX(100%);
+                font-size: rem(50);
+            }
         }
     }
 

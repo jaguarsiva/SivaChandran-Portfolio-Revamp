@@ -103,11 +103,33 @@
 <script>
 import heading from '~/mixins/heading';
 import tilt from '~/mixins/tilt';
-import logo from '~/assets/images/works//logo.png';
-import cover from '~/assets/images/works//logo.png';
-import { useAsyncData } from '#nuxt/vue-app';
 
-const projects = [
+// Static imports for all logos and covers
+import MobileSolutionsLogo from '~/assets/images/works/mobile_solutions/logo.png';
+import MobileSolutionsCover from '~/assets/images/works/mobile_solutions/cover.jpg';
+
+import KanakkuManagerLogo from '~/assets/images/works/kanakku_manager/logo.png';
+import KanakkuManagerCover from '~/assets/images/works/kanakku_manager/cover.jpg';
+
+import WhosappWebLogo from '~/assets/images/works/whosapp_web/logo.png';
+import WhosappWebCover from '~/assets/images/works/whosapp_web/cover.jpg';
+
+import PricetrackyLogo from '~/assets/images/works/pricetracky/logo.png';
+import PricetrackyCover from '~/assets/images/works/pricetracky/cover.jpg';
+
+import UserManagerLogo from '~/assets/images/works/user_manager/logo.png';
+import UserManagerCover from '~/assets/images/works/user_manager/cover.jpg';
+
+import AnbuArtsLogo from '~/assets/images/works/anbu_arts_and_crafts/logo.png';
+import AnbuArtsCover from '~/assets/images/works/anbu_arts_and_crafts/cover.jpg';
+
+import ChozhaConstructionLogo from '~/assets/images/works/chozha_construction_company/logo.png';
+import ChozhaConstructionCover from '~/assets/images/works/chozha_construction_company/cover.jpg';
+
+import ForeverTechnologiesLogo from '~/assets/images/works/forever_technologies/logo.png';
+import ForeverTechnologiesCover from '~/assets/images/works/forever_technologies/cover.jpg';
+
+export const projects = [
     {
         title: 'Web Applications',
         startOdd: true,
@@ -116,24 +138,14 @@ const projects = [
                 title: 'Mobile Solutions',
                 description: 'Multi brand mobile service center, Kallakurichi',
                 link: 'https://www.mobilesolutions.co.in/',
+                logo: MobileSolutionsLogo,
+                cover: MobileSolutionsCover,
                 stack: [
-                    {
-                        title: 'Figma',
-                        link: 'https://www.figma.com/'
-                    },
+                    { title: 'Figma', link: 'https://www.figma.com/' },
                     { title: 'Vue', link: 'https://vuejs.org/' },
-                    {
-                        title: 'Node',
-                        link: 'https://nodejs.org/en/'
-                    },
-                    {
-                        title: 'Express',
-                        link: 'https://expressjs.com/'
-                    },
-                    {
-                        title: 'MongoDB',
-                        link: 'https://www.mongodb.com/'
-                    }
+                    { title: 'Node', link: 'https://nodejs.org/en/' },
+                    { title: 'Express', link: 'https://expressjs.com/' },
+                    { title: 'MongoDB', link: 'https://www.mongodb.com/' }
                 ]
             },
             {
@@ -141,84 +153,56 @@ const projects = [
                 description:
                     'Expense manager to record & analyze all the transactions of the vehicle',
                 link: 'https://kanakku-manager.netlify.app/',
+                logo: KanakkuManagerLogo,
+                cover: KanakkuManagerCover,
                 stack: [
-                    {
-                        title: 'Figma',
-                        link: 'https://www.figma.com/'
-                    },
+                    { title: 'Figma', link: 'https://www.figma.com/' },
                     { title: 'Vue', link: 'https://vuejs.org/' },
-                    {
-                        title: 'Node',
-                        link: 'https://nodejs.org/en/'
-                    },
-                    {
-                        title: 'Express',
-                        link: 'https://expressjs.com/'
-                    },
-                    {
-                        title: 'MongoDB',
-                        link: 'https://www.mongodb.com/'
-                    }
+                    { title: 'Node', link: 'https://nodejs.org/en/' },
+                    { title: 'Express', link: 'https://expressjs.com/' },
+                    { title: 'MongoDB', link: 'https://www.mongodb.com/' }
                 ]
             },
             {
                 title: 'Whosapp Web',
                 description: 'Chat app cloned from "Whatsapp"',
                 link: 'https://whosapp-2c58f.web.app/',
+                logo: WhosappWebLogo,
+                cover: WhosappWebCover,
                 stack: [
                     { title: 'Vue', link: 'https://vuejs.org/' },
-                    {
-                        title: 'SASS',
-                        link: 'https://sass-lang.com/'
-                    },
+                    { title: 'SASS', link: 'https://sass-lang.com/' },
                     {
                         title: 'Typescript',
                         link: 'https://www.typescriptlang.org/'
                     },
-                    {
-                        title: 'Firebase',
-                        link: 'https://firebase.google.com/'
-                    }
+                    { title: 'Firebase', link: 'https://firebase.google.com/' }
                 ]
             },
             {
                 title: 'Pricetracky',
                 description:
-                    'Compare mobile specs and buy from the affliate pages',
+                    'Compare mobile specs and buy from the affiliate pages',
                 link: 'https://pricetracky.com/',
+                logo: PricetrackyLogo,
+                cover: PricetrackyCover,
                 stack: [
-                    {
-                        title: 'Figma',
-                        link: 'https://www.figma.com/'
-                    },
+                    { title: 'Figma', link: 'https://www.figma.com/' },
                     { title: 'Vue', link: 'https://vuejs.org/' },
-                    {
-                        title: 'SASS',
-                        link: 'https://sass-lang.com/'
-                    },
-                    {
-                        title: 'Node',
-                        link: 'https://nodejs.org/en/'
-                    },
-                    {
-                        title: 'Express',
-                        link: 'https://expressjs.com/'
-                    }
+                    { title: 'SASS', link: 'https://sass-lang.com/' },
+                    { title: 'Node', link: 'https://nodejs.org/en/' },
+                    { title: 'Express', link: 'https://expressjs.com/' }
                 ]
             },
             {
                 title: 'User Manager',
                 description: 'Web application built without any frameworks',
                 link: 'https://user-manager-01.netlify.app/',
+                logo: UserManagerLogo,
+                cover: UserManagerCover,
                 stack: [
-                    {
-                        title: 'HTML',
-                        link: 'https://www.w3schools.com/html/'
-                    },
-                    {
-                        title: 'CSS',
-                        link: 'https://www.w3schools.com/css/'
-                    },
+                    { title: 'HTML', link: 'https://www.w3schools.com/html/' },
+                    { title: 'CSS', link: 'https://www.w3schools.com/css/' },
                     {
                         title: 'Javascript',
                         link: 'https://www.w3schools.com/js/'
@@ -236,15 +220,11 @@ const projects = [
                 description:
                     'Wooden statues, carvings, sculptures factory Kallakurichi',
                 link: 'https://anbu-arts.netlify.app/',
+                logo: AnbuArtsLogo,
+                cover: AnbuArtsCover,
                 stack: [
-                    {
-                        title: 'HTML',
-                        link: 'https://www.w3schools.com/html/'
-                    },
-                    {
-                        title: 'CSS',
-                        link: 'https://www.w3schools.com/css/'
-                    },
+                    { title: 'HTML', link: 'https://www.w3schools.com/html/' },
+                    { title: 'CSS', link: 'https://www.w3schools.com/css/' },
                     {
                         title: 'Javascript',
                         link: 'https://www.w3schools.com/js/'
@@ -254,25 +234,15 @@ const projects = [
             {
                 title: 'Chozha Construction Company',
                 description:
-                    'An building construction company offering services across TN',
+                    'A building construction company offering services across TN',
                 link: 'https://chozha-cc.netlify.app/',
+                logo: ChozhaConstructionLogo,
+                cover: ChozhaConstructionCover,
                 stack: [
-                    {
-                        title: 'Figma',
-                        link: 'https://www.figma.com/'
-                    },
-                    {
-                        title: 'HTML',
-                        link: 'https://www.w3schools.com/html/'
-                    },
-                    {
-                        title: 'SASS',
-                        link: 'https://sass-lang.com/'
-                    },
-                    {
-                        title: 'PostCSS',
-                        link: 'https://postcss.org/'
-                    },
+                    { title: 'Figma', link: 'https://www.figma.com/' },
+                    { title: 'HTML', link: 'https://www.w3schools.com/html/' },
+                    { title: 'SASS', link: 'https://sass-lang.com/' },
+                    { title: 'PostCSS', link: 'https://postcss.org/' },
                     {
                         title: 'Javascript',
                         link: 'https://www.w3schools.com/js/'
@@ -282,18 +252,14 @@ const projects = [
             {
                 title: 'Forever Technologies',
                 description:
-                    'Building eternal designs, detailing, project management, software development',
+                    'Building eternal designs, project management, and development',
                 link: 'http://forevertechnologies.biz',
+                logo: ForeverTechnologiesLogo,
+                cover: ForeverTechnologiesCover,
                 stack: [
-                    {
-                        title: 'Figma',
-                        link: 'https://www.figma.com/'
-                    },
+                    { title: 'Figma', link: 'https://www.figma.com/' },
                     { title: 'Vue', link: 'https://vuejs.org/' },
-                    {
-                        title: 'CSS',
-                        link: 'https://www.w3schools.com/css/'
-                    }
+                    { title: 'CSS', link: 'https://www.w3schools.com/css/' }
                 ]
             }
         ]
@@ -309,14 +275,8 @@ const projects = [
                 noLogo: true,
                 link: 'https://pixel-resizer.netlify.app/',
                 stack: [
-                    {
-                        title: 'HTML',
-                        link: 'https://www.w3schools.com/html/'
-                    },
-                    {
-                        title: 'CSS',
-                        link: 'https://www.w3schools.com/css/'
-                    },
+                    { title: 'HTML', link: 'https://www.w3schools.com/html/' },
+                    { title: 'CSS', link: 'https://www.w3schools.com/css/' },
                     {
                         title: 'Javascript',
                         link: 'https://www.w3schools.com/js/'
@@ -339,21 +299,6 @@ const projects = [
         ]
     }
 ];
-
-projects.forEach(project => {
-    project.items.forEach(item => {
-        item.logo = import(
-            '~/assets/images/works/' +
-                item.title.toLowerCase().split(' ').join('_') +
-                '/logo.png'
-        );
-        item.cover = import(
-            '~/assets/images/works/' +
-                item.title.toLowerCase().split(' ').join('_') +
-                '/cover.png'
-        );
-    });
-});
 
 export default {
     mixins: [heading, tilt],

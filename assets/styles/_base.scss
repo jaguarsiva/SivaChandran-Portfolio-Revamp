@@ -1,4 +1,4 @@
-@import './abstracts';
+@use './abstracts' as *;
 
 *,
 *::before,
@@ -310,6 +310,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
+    appearance: button;
     -webkit-appearance: button;
     border: 0;
     outline: 0;

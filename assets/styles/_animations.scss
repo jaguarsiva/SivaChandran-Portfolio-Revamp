@@ -1,3 +1,4 @@
+@use './abstracts' as *;
 
 @keyframes move-up {
     from {
@@ -42,38 +43,44 @@
 }
 
 @keyframes card {
-	0% {
-		transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
-	}
-	25% {
-		transform: perspective(200px) rotateY(0) rotateX(20deg);
-	}
-	50% {
-		transform: perspective(200px) rotateY(-20deg) rotateX(-20deg);
-	}
-	75% {
-		transform: perspective(200px) rotateY(0) rotateX(20deg);
-	}
-	to {
-		transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
-	}
+    0% {
+        transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
+    }
+    25% {
+        transform: perspective(200px) rotateY(0) rotateX(20deg);
+    }
+    50% {
+        transform: perspective(200px) rotateY(-20deg) rotateX(-20deg);
+    }
+    75% {
+        transform: perspective(200px) rotateY(0) rotateX(20deg);
+    }
+    to {
+        transform: perspective(200px) rotateY(20deg) rotateX(-20deg);
+    }
 }
 
-.slide-left-enter, .slide-right-leave-to {
+.slide-left-enter,
+.slide-right-leave-to {
     transform: translateX(100vw);
 }
 
-.slide-right-enter, .slide-left-leave-to  {
+.slide-right-enter,
+.slide-left-leave-to {
     transform: translateX(-100vw);
 }
 
-.slide-left-enter-to, .slide-left-leave,
-.slide-right-enter-to, .slide-right-leave {
+.slide-left-enter-to,
+.slide-left-leave,
+.slide-right-enter-to,
+.slide-right-leave {
     transform: translateX(0);
 }
 
-.slide-left-enter-active, .slide-left-leave-active,
-.slide-right-enter-active, .slide-right-leave-active {
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
     transition: transform 0.5s ease-in-out;
 }
 

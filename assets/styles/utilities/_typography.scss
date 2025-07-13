@@ -1,3 +1,5 @@
+@use './../abstracts' as *;
+
 .biko__black {
     font-family: 'Biko-Black', sans-serif;
     font-weight: normal;
@@ -85,7 +87,7 @@
         height: 5px;
         width: 25px;
         background-color: $yellow;
-        transform: translateX(-50%) rotate(-12deg) scaleX( var(--scale) );
+        transform: translateX(-50%) rotate(-12deg) scaleX(var(--scale));
         transform-origin: left;
     }
 
