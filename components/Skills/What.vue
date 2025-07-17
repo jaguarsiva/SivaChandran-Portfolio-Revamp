@@ -37,10 +37,17 @@
                             :title="item.title"
                             target="_blank"
                             :href="item.link"
-                            class="icons__sprite"
-                            :class="item.title.toLowerCase()"
+                            class="skill__link"
                         >
-                            &nbsp;
+                            <span
+                                class="icons__sprite"
+                                :class="item.title.toLowerCase()"
+                            >
+                                &nbsp;
+                            </span>
+                            <span class="skill__name biko__regular">
+                                {{ item.title }}
+                            </span>
                         </a>
                     </li>
                 </ul>
@@ -59,7 +66,7 @@ export default {
         return {
             skills: [
                 {
-                    title: 'Core',
+                    title: 'Frontend',
                     items: [
                         {
                             title: 'HTML',
@@ -73,21 +80,8 @@ export default {
                             title: 'Javascript',
                             link: 'https://www.w3schools.com/js/'
                         },
-                        { title: 'SASS', link: 'https://sass-lang.com/' },
-                        {
-                            title: 'Typescript',
-                            link: 'https://www.typescriptlang.org/'
-                        }
-                    ]
-                },
-                {
-                    title: 'Frontend',
-                    items: [
                         { title: 'Vue', link: 'https://vuejs.org/' },
-                        { title: 'Nuxt', link: 'nuxtjs.org' },
-                        { title: 'PostCSS', link: 'https://postcss.org/' },
-                        { title: 'Tailwind', link: 'https://tailwindcss.com/' },
-                        { title: 'Figma', link: 'https://www.figma.com/' }
+                        { title: 'Nuxt', link: 'https://nuxtjs.org' }
                     ]
                 },
                 {
@@ -95,28 +89,22 @@ export default {
                     items: [
                         { title: 'Node', link: 'https://nodejs.org/en/' },
                         { title: 'Express', link: 'https://expressjs.com/' },
-                        { title: 'MongoDB', link: 'https://www.mongodb.com/' },
+                        { title: 'Python', link: 'https://www.python.org/' },
                         {
-                            title: 'Firebase',
-                            link: 'https://firebase.google.com/'
+                            title: 'FastApi',
+                            link: 'https://fastapi.tiangolo.com/'
                         }
                     ]
                 },
                 {
-                    title: 'Tools',
+                    title: 'Others',
                     items: [
-                        { title: 'Vite', link: 'https://vitejs.dev/' },
-                        { title: 'Webpack', link: 'https://webpack.js.org/' },
-                        { title: 'Gulp', link: 'https://gulpjs.com/' },
-                        { title: 'eslint', link: 'https://eslint.org/' },
-                        { title: 'prettier', link: 'https://prettier.io/' }
-                    ]
-                },
-                {
-                    title: 'Source Control',
-                    items: [
-                        { title: 'Git', link: 'https://git-scm.com/' },
-                        { title: 'Github', link: 'https://github.com/' }
+                        {
+                            title: 'SQL',
+                            link: 'https://en.wikipedia.org/wiki/SQL'
+                        },
+                        { title: 'AWS', link: 'https://aws.amazon.com/' },
+                        { title: 'Docker', link: 'https://www.docker.com/' }
                     ]
                 }
             ],
@@ -434,6 +422,19 @@ export default {
             }
         }
     }
+}
+
+.skill__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.skill__name {
+    font-size: rem(14);
+    color: $black;
+    line-height: 1;
 }
 
 .skill__title {
