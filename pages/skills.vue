@@ -2,7 +2,7 @@
     <main>
         <Hero />
         <What />
-        <How />
+        <!-- <How /> -->
     </main>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     },
     transition(to, from) {
         if (!from) return '';
-        else if( from.name === 'index' ) return 'slide-left';
+        else if (from.name === 'index') return 'slide-left';
         else return 'slide-right';
     }
 };

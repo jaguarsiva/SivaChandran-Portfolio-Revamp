@@ -9,7 +9,7 @@
             class="section__heading"
             :class="{ heading__visible: isHeadingVisible }"
         >
-            Bonjour
+            Hello
         </h2>
         <div class="intro__box">
             <div class="intro__texts relative">

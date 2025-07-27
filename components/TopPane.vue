@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav__item">
                         <a
-                            href="https://drive.google.com/file/d/1P_cmNywsYuqmnkdPynOSE_c7NUR9DuYA/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1N86G39-phe7I42RKqCehofTGIp7hdCmY/view"
                             target="__blank"
                             class="nav__link phage__rough nav__btn resume__btn translate__up"
                             @click.stop="handleLinkClick"

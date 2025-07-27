@@ -265,7 +265,7 @@ export default {
     }
 
     .skills__visible & {
-        --duration: 300ms;
+        --duration: 200ms;
         --line-delay: calc(
             var(--delay) + (var(--duration) * (4 + var(--total)))
         );
@@ -366,23 +366,13 @@ export default {
         }
 
         &:nth-child(2) {
-            --delay: 4900ms;
-            --total: 5;
-        }
-
-        &:nth-child(3) {
-            --delay: 8700ms;
+            --delay: 3500ms;
             --total: 4;
         }
 
-        &:nth-child(4) {
-            --delay: 12100ms;
-            --total: 5;
-        }
-
-        &:nth-child(5) {
-            --delay: 15700ms;
-            --total: 2;
+        &:nth-child(3) {
+            --delay: 5800ms;
+            --total: 3;
         }
     }
 

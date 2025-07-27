@@ -2,7 +2,7 @@
     <main>
         <Hero />
         <What />
-        <Where />
+        <!-- <Where /> -->
     </main>
 </template>
 
