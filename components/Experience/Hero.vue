@@ -3,7 +3,7 @@
         class="hero__section"
         v-on="{ mousemove: canHover ? handleMouseMove : () => {} }"
     >
-        <h1 ref="heroText" class="hero__text">Works</h1>
+        <h1 ref="heroText" class="hero__text">Experience</h1>
         <div
             class="hero__image"
             :class="{ is__visible: isHeroVisible }"
@@ -23,3 +23,11 @@ export default {
     mixins: [hero]
 };
 </script>
+
+<style lang="scss" scoped>
+@media (max-width: 768px) {
+    .hero__text {
+        font-size: rem(140);
+    }
+}
+</style>

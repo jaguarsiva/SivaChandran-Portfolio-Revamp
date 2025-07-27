@@ -59,7 +59,7 @@ export default {
             navLinks: [
                 { title: 'Intro', name: 'index' },
                 { title: 'Skills', name: 'skills' },
-                { title: 'Works', name: 'works' }
+                { title: 'Experience', name: 'experience' }
             ],
             isTopPaneVisible: true
         };

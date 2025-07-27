@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Hero from '@/components/Works/Hero.vue';
-import What from '@/components/Works/What.vue';
-import Where from '@/components/Works/Where.vue';
+import Hero from '@/components/Experience/Hero.vue';
+import What from '@/components/Experience/What.vue';
+import Where from '@/components/Experience/Where.vue';
 
 export default {
     components: {
