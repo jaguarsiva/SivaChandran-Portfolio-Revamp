@@ -79,8 +79,12 @@ export default {
                     title: 'Senior Software Engineer at Credit Saison India'
                 },
                 {
-                    time: `Apr 2025 - Present`,
+                    time: `Apr 2025 - Jan 2026`,
                     title: 'Lead Software Engineer at Credit Saison India'
+                },
+                {
+                    time: `Jan 2026 - Present`,
+                    title: 'Lead Engineer at Presidio Solutions Pvt Ltd.'
                 }
             ],
             isMapVisible: false
@@ -111,7 +115,7 @@ export default {
         padding-bottom: 60px;
     }
 
-    @for $i from 1 through 15 {
+    @for $i from 1 through 20 {
         .is__visible &:nth-child(#{$i}) {
             --transition-delay: #{500ms * $i};
         }
