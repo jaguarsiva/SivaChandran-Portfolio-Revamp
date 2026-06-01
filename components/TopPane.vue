@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav__item">
                         <a
-                            href="https://drive.google.com/file/d/1-MAxbAHaM-OgOwAbw-PbSSti7TAT-K9f/view"
+                            href="https://drive.google.com/file/d/1qxXbaQ4b7EJQ3gcIJhtZCfdBEPcR_dFW/view"
                             target="__blank"
                             class="nav__link phage__rough nav__btn resume__btn translate__up"
                             @click.stop="handleLinkClick"
@@ -113,7 +113,9 @@ header {
 
     &:focus-visible {
         outline: 0;
-        box-shadow: 0 0 0 3px $tomato, 0 0 0 6px $yellow;
+        box-shadow:
+            0 0 0 3px $tomato,
+            0 0 0 6px $yellow;
     }
 
     img {
@@ -169,7 +171,9 @@ nav {
 
     &:focus-visible {
         outline: 0;
-        box-shadow: 0 0 0 0px $tomato, 0 0 0 4px $yellow;
+        box-shadow:
+            0 0 0 0px $tomato,
+            0 0 0 4px $yellow;
     }
 
     &:focus-visible::after {
